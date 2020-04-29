@@ -98,6 +98,8 @@ header {
 
 section {
 	width: 100%;
+	max-width: 1500px;
+	margin: 0 auto;
 	/* to skip the navbar height. real sepatation is padding-navbar */
 	padding-top: 100px; 
 	margin-top: -10px;
@@ -109,10 +111,14 @@ section {
 }
 
 .container {
+	
+
 	/* height: 100vh; */
 	/* width: 100%; */
 	/* height: 100%; */
-	padding: 0 8%;
+	/* padding: 0 8%; */
+	padding: 0 120px;
+
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -120,8 +126,10 @@ section {
 }
 
 .container-narrow {
-	/* padding: 0 8%; */
-	padding: 0 11%;
+	
+
+	/* padding: 0 11%; */
+	padding: 0 170px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -602,6 +610,7 @@ h2 .title-wrapper:nth-child(2):after {
 .timeline {
 	position: relative;
 	width: 100%;
+	
 	height: 600px;
 	overflow: hidden;
 	display: flex;
@@ -916,8 +925,8 @@ h2 .title-wrapper:nth-child(2):after {
 	font-size: 1.2em;
 	/* color: #000; */
 
-	color: var(--off-orange);
-	background: var(--dark-red);
+	color: var(--dark-red);
+	background: var(--off-orange);
 	padding: 10px 18px;
 	border-radius: 10px;
 
@@ -931,8 +940,8 @@ h2 .title-wrapper:nth-child(2):after {
 .current-pj-section .dev-squema i {
 	padding: 0 10px;
 	font-size: 1.3em;
-	/* color: var(--dark-red); */
-	color: var(--off-orange);
+	color: var(--dark-red);
+	/* color: var(--off-orange); */
 }
 
 
@@ -957,7 +966,9 @@ h2 .title-wrapper:nth-child(2):after {
 
 	padding: 30px 50px;
 
-	background: var(--off-orange);
+	background: var(--dark-red);
+	color: var(--off-orange);
+
 	border-radius: 30px;
 }
 
@@ -994,16 +1005,41 @@ h2 .title-wrapper:nth-child(2):after {
 
 }
 
-
-.colab-opt a {
+a.link {
 	font-weight: 600;
 	color: var(--dark-red);
 	text-decoration: underline var(--dark-red);
 }
-
-
-.colab-opt a:hover {
+a.link:hover {
 	color: var(--bright-red);
+}
+
+
+
+.colaborators-wrapper {
+	width: 100%;
+	
+	margin-top: 25px;
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+.colab-btn {
+	width: fit-content;
+	height: fit-content;
+	margin: 0 8px 20px;
+	
+	-webkit-box-shadow: 0px 0px 29px -15px rgba(0,0,0,0.68);
+	-moz-box-shadow: 0px 0px 29px -15px rgba(0,0,0,0.68);
+	box-shadow: 0px 0px 29px -15px rgba(0,0,0,0.68);
+
+	transition: all 0.3s ease-in-out;
+}
+
+.colab-btn:hover {
+	/* ! mask?  */
 }
 
 
@@ -1012,14 +1048,16 @@ h2 .title-wrapper:nth-child(2):after {
 footer {
 	width: 100%;
 	margin-top: 50px;
-	background: rgb(56, 56, 56);
+	/* background: rgb(56, 56, 56); */
+	background: var(--darkest-red);
 	padding: 40px 8%;
 
 }
 
 .footer-content {
 	margin: 0 auto;
-	color: white;
+	/* color: white; */
+	color: var(--off-orange);
 	font-size: 0.9rem;
 	max-width: 800px;
 
@@ -1029,17 +1067,13 @@ footer {
 }
 
 footer a {
-	color: white;
+	color: var(--off-orange);
+	transition: color 0.2s ease-in-out;
 }
 
 footer i {
 	font-size: 1.5rem;
 }
-
-footer a:hover {
-	transition: color 0.2s ease-in-out;
-}
-
 
 footer a:hover {
 	color: var(--bright-red);
