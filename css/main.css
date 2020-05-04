@@ -12,7 +12,8 @@
 	--light-red: rgb(222, 137, 141);
 	--dark-purple: rgb(53, 18, 148);
 	--bright-purple: rgb(68, 38, 150);
-	--off-orange: rgb(255, 203, 125);
+	--light-orange: rgb(241, 98, 58);
+	--off-orange: rgb(253, 193, 95);
 	--timeline-event-width: 90%;
 }
 
@@ -98,7 +99,7 @@ header {
 
 section {
 	width: 100%;
-	max-width: 1500px;
+	max-width: 2500px;
 	margin: 0 auto;
 	/* to skip the navbar height. real sepatation is padding-navbar */
 	padding-top: 100px; 
@@ -111,8 +112,6 @@ section {
 }
 
 .container {
-	
-
 	/* height: 100vh; */
 	/* width: 100%; */
 	/* height: 100%; */
@@ -429,6 +428,7 @@ h2 .title-wrapper:nth-child(2):after {
 }
 
 /* <---------- About Section ----------> */
+/* ! limpiar */
 
 #quienes-img1 {
 	z-index: 0;
@@ -461,7 +461,6 @@ h2 .title-wrapper:nth-child(2):after {
 	font-size: 20px;
 	font-weight: 500;
 	color: white;
-
 }
 
 
@@ -499,7 +498,7 @@ h2 .title-wrapper:nth-child(2):after {
 
 .introduction-section img {
 	float: right;
-	width: 600px;
+	width: 700px;
 	padding-left: 40px;
 	padding-bottom: 40px;
 }
@@ -605,6 +604,54 @@ h2 .title-wrapper:nth-child(2):after {
 	margin: 20px 0;
 }
 
+
+/* <---------- Map Section ----------> */
+.map-section {
+	position: relative;
+	width: 100%;
+	height: 800px;
+	padding: 0 120px;
+
+	background: url(../img/map.jpg);
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.map-section h3,
+.map-section h4,
+.map-section p	{
+	color: #fff;
+}
+
+.map-card {
+	position: absolute;
+	background: var(--light-orange);
+	/* background: var(--bright-red); */
+	padding: 15px 20px 10px;
+	width: 90%;
+	max-width: 800px;
+	font-size: 1rem;
+}
+
+.map-card:first-of-type {
+	top: 220px;
+	left: 50px;
+}
+
+.map-card:nth-of-type(2) {
+	right: 50px;
+	bottom: 180px;
+}
+
+@media (max) {
+	.map-section {
+		background-size: 1000px;
+	}
+}
+
+
+
 /* <---------- Timeline Section ----------> */
 
 .timeline {
@@ -645,7 +692,8 @@ h2 .title-wrapper:nth-child(2):after {
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
-	border: 2px solid var(--off-orange);
+	/* border: 2px solid var(--off-orange); */
+	border: 2px solid var(--light-orange);
 	/* background: rgba(196, 47, 22, 0.2); */
 	background: rgba(255, 203, 125, 0.2);
 	font-size: 1.2rem;
@@ -673,7 +721,8 @@ h2 .title-wrapper:nth-child(2):after {
 	width: 100%;
 	height: 2px;
 	border-radius: 50%;
-	background-color: var(--off-orange);
+	background-color: var(--light-orange);
+	/* background-color: var(--off-orange); */
 }
 
 .control-line-wrapper {
@@ -705,8 +754,9 @@ h2 .title-wrapper:nth-child(2):after {
 
 .timeline-node.active span {
 	font-size: 1.4em;
-	color: var(--dark-red);
-	color: var(--off-orange);
+	/* color: var(--dark-red); */
+	color: var(--light-orange);
+	/* color: var(--off-orange); */
 	font-weight: 700;
 }
 
@@ -721,7 +771,8 @@ h2 .title-wrapper:nth-child(2):after {
     width: 14px;
 	height: 14px;
 	border-radius: 50%;
-	border: 1px solid var(--off-orange);
+	/* border: 1px solid var(--off-orange); */
+	border: 1px solid var(--light-orange);
 	/* background: rgba(196, 47, 22, 0.4); */
 	background: rgba(255, 203, 125, 0.4);
     /* left: -3px; */
