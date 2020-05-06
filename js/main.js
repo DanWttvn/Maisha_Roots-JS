@@ -119,7 +119,7 @@ controlNext.addEventListener("click", () => switchEvent("next"))
 
 
 // Add Nodes to the timeline
-arrangeNodes()
+arrangeNodes();
 
 function arrangeNodes() {
 	
@@ -171,6 +171,15 @@ function switchEvent(dir) {
 	// Aprovecho para cambiar el style del selecctionado
 	addActiveToController();
 }
+
+
+// Switch Event with Buttons
+// function switchEvent(dir) {
+
+// 	timelineImages.style.left = "-1000px";
+
+// 	// Aprovecho para cambiar el style del selecctionado
+// }
 
 
 
