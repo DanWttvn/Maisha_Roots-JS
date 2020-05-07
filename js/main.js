@@ -101,6 +101,7 @@ backdrop.addEventListener("click", () => {
 
 
 /* <---------- Timeline ----------> */
+// ! probar con translateY()
 
 let sliderIndex = 0;
 const timelineEvents = document.querySelectorAll(".timeline-event")
@@ -183,3 +184,31 @@ function switchEvent(dir) {
 
 
 
+/* <---------- Map ----------> */
+const btnSp = document.querySelector(".btn-sp");
+const closeSp = document.querySelector(".close-sp");
+const btnTz = document.querySelector(".btn-tz");
+const closeTz = document.querySelector(".close-tz");
+const cardSp = document.querySelector(".card-sp");
+const cardTz = document.querySelector(".card-tz");
+
+btnSp.addEventListener("click", () => showCard("sp"));
+btnTz.addEventListener("click", () => showCard("tz"));
+closeSp.addEventListener("click", () => closeCard());
+closeTz.addEventListener("click", () => closeCard());
+
+
+function showCard(country) {
+	if(country === "sp") {
+		cardSp.style.display = "inline-block";
+		cardTz.style.display = "none";
+	} else if (country === "tz") {
+		cardSp.style.display = "none";
+		cardTz.style.display = "inline-block";
+	}
+}
+
+function closeCard() {
+	cardSp.style.display = "none";
+	cardTz.style.display = "none";
+}

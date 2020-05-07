@@ -774,8 +774,50 @@ h2 .title-wrapper:nth-child(2):after {
 	background-repeat: no-repeat;
 }
 
-.map-section h3	{
-	top: 0;
+.map-section .btn-show {
+	display: none;
+	position: absolute;
+	/* padding: 5px; */
+	width: 80px;
+	height: 80px;
+
+	justify-content: center;
+	align-items: center;
+}
+
+.btn-show button {
+	font-size: 25px;
+	/* width: 50px;
+	height: 50px; */
+	border-radius: 50%;
+	background: rgba(255,255,255,0.3);
+	border: 2px solid white;
+	color: white;
+
+	animation: 0.7s ease-in-out infinite alternate sizeAnimation;
+}
+
+@keyframes sizeAnimation {
+	/** probar con scale? / corregir posicion */
+	from{
+		width: 50px; 
+		height: 50px;
+	}
+	to{
+		width: 55px; 
+		height: 55px;
+	}
+}
+
+
+
+.map-section .btn-sp {
+	left: 21%;
+	top: 100px;
+}
+.map-section .btn-tz {
+	right: 16%;
+	bottom: 80px;
 }
 
 .map-section h3,
@@ -787,30 +829,88 @@ h2 .title-wrapper:nth-child(2):after {
 .map-card {
 	position: absolute;
 	background: var(--dark-orange);
-	/* background: var(--bright-red); */
 	padding: 15px 20px 10px;
 	width: 90%;
 	max-width: 800px;
 	font-size: 1rem;
 }
-
-.map-card:first-of-type {
+.map-card.card-sp {
 	top: 220px;
 	left: 50px;
 }
-
-.map-card:nth-of-type(2) {
+.map-card.card-tz {
 	right: 50px;
 	bottom: 180px;
 }
-
-@media (max) {
-	.map-section {
-		background-size: 1000px;
-	}
+.map-card .fa-times {
+	display: none;
+	position: absolute;
+	font-size: 1em;
+	color: #fff;
+	top: 15px;
+	right: 20px;
 }
 
 
+
+@media (max-width: 1080px) {
+	.map-section {
+		height: 600px;
+	}
+	.map-section p	{
+		font-size: 0.95em;
+	}
+
+	.map-card {
+		width: 42%;
+	}
+	.map-card.card-sp {
+		top: 170px;
+	}
+	.map-card.card-tz {
+		bottom: 150px;
+	}
+}
+
+@media (max-width: 650px) {
+	.map-section .btn-show {
+		display: flex;
+	}
+
+	.map-card .fa-times {
+		display: inline-block;
+		position: absolute;
+		font-size: 1em;
+		color: #fff;
+		top: 15px;
+		right: 20px;
+	}	
+
+	.map-card {
+		display: none;
+		width: 280px;
+	}
+
+	.map-card.card-sp {
+		top: 150px;
+		left: auto;
+		right: 30px;
+	}
+	.map-card.card-tz {
+		bottom: 60px;
+		right: auto;
+		left: 30px;
+	}
+}
+
+@media (max-width: 480px) {
+	.map-section .btn-sp {
+		left: 12%;
+	}
+	.map-section .btn-tz {
+		right: 7%;
+	}
+}
 
 /* <---------- Timeline Section ----------> */
 
@@ -1006,6 +1106,20 @@ h2 .title-wrapper:nth-child(2):after {
 	background-size: cover;
 }
 
+
+
+@media (max-width: 800px) {
+	.timeline-texts > .timeline-event p {
+		font-size: 0.95em;
+	}
+}
+
+@media (max-width: 650px) {
+	/* ! en 2016, ponerle un scroll invisible y que vaya desapareciendo en los bordes */
+	.timeline {
+		height: 650px;
+	}
+}
 
 
 /* <---------- Structure Section ----------> */
