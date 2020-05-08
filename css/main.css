@@ -19,19 +19,18 @@
 }
 
 body {
+	position: relative;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 17px;
-
 	font-weight: 400;
-
-	/* font-weight: 500; */
-
 	color: rgb(56, 56, 56);
-
 	line-height: 1.6;
-	/* height: 100vh; */
 
-	/* background-color: var(--off-orange); */
+	/* * siempre: footer bottom */
+	min-height: 100vh; 
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -236,6 +235,14 @@ section {
 	background-color: var(--bright-red);
 } */
 
+
+button {
+	outline: none;
+	cursor: pointer;
+	border-style: none;
+	font-family: inherit;
+	font-weight: inherit;
+}
 
 button:focus,
 button:active {
@@ -1370,13 +1377,27 @@ h2 .title-wrapper:nth-child(2):after {
 	box-shadow: 10px 10px 26px -19px rgba(0,0,0,0.68);
 }
 
+/* <---------- Transparency Section ----------> */
+
+.transparency-docs-section ol,
+.transparency-docs-section ul {
+	padding-left: 50px;
+	margin-bottom: 20px;
+}
 
 
 /* <---------- Current Projects Section ----------> */
 
 .current-pj-section p,
-.current-pj-section h4 {
+.current-pj-section h4,
+.current-pj-section ul {
 	width: 100%;
+}
+
+.current-pj-section ul {
+	padding-left: 50px;
+	margin-bottom: 20px;
+	list-style-type: none;
 }
 
 .current-pj-section .dev-squema {
@@ -1422,13 +1443,9 @@ h2 .title-wrapper:nth-child(2):after {
 .donate-section .colab-opt ul {
 	margin: 0 40px;
 	margin-bottom: 20px;
-
 	padding: 30px 50px;
-
 	background: var(--dark-red);
-	/* color: var(--off-orange); */
 	color: var(--off-orange);
-
 	border-radius: 30px;
 }
 
@@ -1515,15 +1532,82 @@ a.link:hover {
 }
 
 
+
+/* <---------- Donation Page ----------> */
+
+.donate-methods-section {
+	/* width: 70%; */
+}
+
+.accordion-btn {
+	width: 100%;
+	cursor: pointer;
+	padding: 5px 20px;
+	/* background: rgba(0, 0, 0, 0.05); */
+	border-bottom: 1px #ccc solid;
+}
+
+.accordion-btn i {
+	transform: rotate(-90deg)
+}
+
+.accordion-btn.open i {
+	transform: rotate(0deg)
+}
+
+.accordion-content {
+	max-height: 0;
+	padding: 0 30px;
+	overflow: hidden;
+	transition: max-height 0.4s ease-out;
+}
+
+.accordion-content ul {
+	background: rgba(0,0,0,0.3);
+	color: var(--dark-red);
+	margin: 0 auto;
+	width: fit-content;
+	margin-bottom: 20px;
+	padding: 30px 50px;
+	border-radius: 30px;
+}
+
+.donation-opt-wrapper {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+.donation-opt {
+	padding: 10px 15px;
+	font-size: 1.2rem;
+	font-weight: 700;
+	border-radius: 5px;
+	margin: 10px 5px;
+	background: var(--dark-red);
+	color: var(--off-orange);
+}
+
+.donation-opt:hover {
+	background: var(--bright-red);
+}
+
+
+
 /* <---------- Footer Section ----------> */
 
 footer {
 	width: 100%;
 	margin-top: 50px;
-	/* background: rgb(56, 56, 56); */
 	background: var(--darkest-red);
 	padding: 40px 8%;
+}
 
+footer.setToBottom {
+	/* NO FUNCIONA AL DESPLEGAR */
+	/* position: absolute; */
+	/* bottom: 0; */
+	/* margin-top: 1000px; */
 }
 
 .footer-content {
