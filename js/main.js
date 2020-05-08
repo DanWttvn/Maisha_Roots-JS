@@ -1,7 +1,12 @@
 /* <---------- Navbar ----------> */
 
-/* Smooth Scroll */
+/* Appear scroll icon */
+const scrollIcon = document.querySelector(".header-section .scroll-icon")
+setTimeout(() => {
+	scrollIcon.removeAttribute("hidden")
+}, 1500 )
 
+/* Smooth Scroll */
 const scroll = new SmoothScroll('.navbar a[href*="#"]', {
 	speed: 300 // a menos mas
 });
@@ -12,18 +17,31 @@ $(function() {
 	
     $(document).ready(function(){                    
         $(window).scroll(function(){                     
-            if ($(this).scrollTop() > $(".header-section").height() - 250) {
+            if ($(this).scrollTop() > $(".header-section").height() - 300) {
                 $('.navbar').fadeIn(400);
             } else {
                 $('.navbar').fadeOut(400);
             }
         });
-    });
+	});
 })
 
+	// Appear on Scroll
+	// if (scrollPos > headerWidth - 250) {
+	// 	navbar.style.top = "0"
+	// 	navbar.style.opacity = "1"
+	// } else {
+	// 	navbar.style.top = "-90px"
+	// 	navbar.style.opacity = "0"
+	// }
 
 /* Change Active on Scroll */ 
 const sectionsArray = document.querySelectorAll("section");
+const headerSection = document.querySelector(".header-section");
+// 
+const headerWidth = parseFloat(getComputedStyle(headerSection).width, 10);
+
+const navbar = document.querySelector(".navbar")
 let sectionsPos = {};
 
 getOffsetTop();
@@ -35,19 +53,20 @@ function getOffsetTop() {
 	})
 }
 
-window.addEventListener('scroll', activeClassOnScroll);
 
+// Navbar change on scroll
 function activeClassOnScroll() {
 	let scrollPos = document.documentElement.scrollTop  || document.body.scrollTop; // pixeles que ha bajado el usuario
 	
 	for(id in sectionsPos) {
 		const offset = 300
 		if(sectionsPos[id] - offset <= scrollPos) {
-			document.querySelector(".nav-item.active").classList.remove("active")
+			document.querySelector(".active").classList.remove("active")
 			document.querySelector(`a[href*=${id}]`).classList.add("active")
 		}
 	}
 }
+
 
 /* Change active on Click */ 
 const navItems = document.querySelectorAll(".nav-item");
@@ -80,7 +99,6 @@ function visibleClassOnScroll() {
 }
 
 
-
 /* <---------- Responsive Navbar ----------> */
 
 const openIcon = document.querySelector(".hamburger-icon")
@@ -101,7 +119,6 @@ backdrop.addEventListener("click", () => {
 
 
 /* <---------- Timeline ----------> */
-// ! probar con translateY()
 
 let sliderIndex = 0;
 const timelineEvents = document.querySelectorAll(".timeline-event")
@@ -146,7 +163,6 @@ function switchEvent(dir) {
 	const sliderWidth = parseFloat(getComputedStyle(timelineEvents[0]).width, 10)
 
 	if(typeof dir == "string") {
-		console.log("prev or next");
 		if(dir === "next" && sliderIndex === numtimelineEvents - 1) {
 			sliderIndex = 0;
 		} else if (dir === "prev" && sliderIndex === 0) {
@@ -166,21 +182,15 @@ function switchEvent(dir) {
 	// console.log({sliderWidth});
 	// console.log({leftDistance});
 
-	timelineImages.style.left = "" + leftDistance + "px";
-	timelineTexts.style.left = "" + leftDistance + "px";
+	// timelineImages.style.left = "" + leftDistance + "px";
+	// timelineTexts.style.left = "" + leftDistance + "px";
+
+	timelineImages.style.transform = "translateX(" + leftDistance + "px)";
+	timelineTexts.style.transform = "translateX(" + leftDistance + "px)";
 
 	// Aprovecho para cambiar el style del selecctionado
 	addActiveToController();
 }
-
-
-// Switch Event with Buttons
-// function switchEvent(dir) {
-
-// 	timelineImages.style.left = "-1000px";
-
-// 	// Aprovecho para cambiar el style del selecctionado
-// }
 
 
 
