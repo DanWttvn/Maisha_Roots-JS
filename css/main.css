@@ -76,7 +76,12 @@ h5 {
 }
   
 p {
+	width: 100%;
 	margin-bottom: 1rem;
+}
+
+.justify-text {
+	text-align: justify;
 }
 
 .italic {
@@ -523,16 +528,16 @@ h2 .title-wrapper:nth-child(2):after {
 .header-section .scroll-icon {
 	position: absolute;
 	margin: 0 auto;
-	bottom: 34px;
+	bottom: 40px;
 
-	font-size: 40px;
+	font-size: 38px;
 	color: rgb(170, 170, 170);
 	animation: 0.8s ease-in-out 1.5s infinite scrollIcon;
 }
 
 @keyframes scrollIcon {
-	from{ bottom: 34px; }
-	to{ bottom: 30px; }
+	from{ bottom: 38px; }
+	to{ bottom: 34px; }
 }
 
 
@@ -1275,6 +1280,9 @@ h2 .title-wrapper:nth-child(2):after {
 
 /* <---------- Teamers Section ----------> */
 
+.teamers-section p {
+	text-align: center;
+}
 
 .quote {
 	position: relative;
@@ -1341,7 +1349,7 @@ h2 .title-wrapper:nth-child(2):after {
 	/* background: var(--bright-red); */
 	background: var(--dark-red);
 	padding: 10px 15px;
-	color: #fff;
+	color: var(--off-orange);
 
 	transition: all 0.2s ease-in-out;
 }
@@ -1396,7 +1404,6 @@ h2 .title-wrapper:nth-child(2):after {
 .colab-opt {
 	width: 500px;
 	max-width: 100%;
-	text-align: justify;
 }
 
 .colab-opt h3 {

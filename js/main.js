@@ -53,8 +53,7 @@ function getOffsetTop() {
 	})
 }
 
-
-// Navbar change on scroll
+window.addEventListener('scroll', activeClassOnScroll);
 function activeClassOnScroll() {
 	let scrollPos = document.documentElement.scrollTop  || document.body.scrollTop; // pixeles que ha bajado el usuario
 	
