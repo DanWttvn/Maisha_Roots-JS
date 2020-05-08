@@ -266,7 +266,8 @@ button:active {
 
 .navbar-brand {
 	width: 200px;
-	margin-left: 10px;
+	/* margin-left: 10px; */
+	padding: 20px;
 }
 .navbar-brand img {
 	width: 100%;
@@ -351,6 +352,14 @@ button:active {
 
 
 @media (max-width: 1300px) {
+	.navbar {
+		padding: 0 24px;
+	}
+	.navbar-brand {
+		padding: 0;
+	}
+
+
 	.hamburger-icon,
 	.close-btn {
 		display: block;
