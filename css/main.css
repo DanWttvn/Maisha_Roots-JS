@@ -665,6 +665,7 @@ h2 .title-wrapper:nth-child(2):after {
 /* <---------- Social Media links pop-up ----------> */
 
 aside.sm-links {
+	z-index: 400;
 	position: fixed;
 	right: 30px;
 	bottom: 30px;

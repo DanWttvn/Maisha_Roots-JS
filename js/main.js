@@ -10,6 +10,15 @@ const scroll = new SmoothScroll('.navbar a[href*="#"]', {
 	speed: 300 // a menos mas
 });
 
+/* <---------- Newsletter ----------> */
+const newsletter = document.querySelector(".newsletter-popup");
+const closeNewsLetter = document.querySelector(".newsletter-popup i.fa-times")
+
+closeNewsLetter.addEventListener("click", () => {
+	newsletter.style.display = "none"
+	newsletter.classList.add("closed")
+})
+
 
 /* <---------- Navbar ----------> */
 /* Navbar appear on Scroll */
@@ -21,8 +30,11 @@ $(function() {
     $(document).ready(function(){                    
         $(window).scroll(function(){                     
             if ($(this).scrollTop() > $(".header-section").height() - 300) {
-                $('.navbar').fadeIn(400);
-                $(".newsletter-popup").fadeIn(400);
+				$('.navbar').fadeIn(400);
+				const userClosed = newsletter.classList.contains("closed");
+				if(!userClosed) {
+					$(".newsletter-popup").fadeIn(400);
+				}
                 $("aside.sm-links").fadeIn(400);
             } else {
 				$('.navbar').fadeOut(400);
@@ -33,14 +45,14 @@ $(function() {
 	});
 })
 
-	// Appear on Scroll
-	// if (scrollPos > headerWidth - 250) {
-	// 	navbar.style.top = "0"
-	// 	navbar.style.opacity = "1"
-	// } else {
-	// 	navbar.style.top = "-90px"
-	// 	navbar.style.opacity = "0"
-	// }
+// // Appear on Scroll
+// if (scrollPos > headerWidth - 250) {
+// 	navbar.style.top = "0"
+// 	navbar.style.opacity = "1"
+// } else {
+// 	navbar.style.top = "-90px"
+// 	navbar.style.opacity = "0"
+// }
 
 /* Change Active on Scroll */ 
 const sectionsArray = document.querySelectorAll("section");
@@ -91,16 +103,6 @@ function handleIndicator(el) {
 	});
 	el.classList.add("active")	
 }
-
-
-/* <---------- Newsletter ----------> */
-const newsletter = document.querySelector(".newsletter-popup");
-const closeNewsLetter = document.querySelector(".newsletter-popup i.fa-times")
-
-closeNewsLetter.addEventListener("click", () => {
-	newsletter.style.display = "none"
-})
-
 
 
 /* <---------- Fill title ----------> */
