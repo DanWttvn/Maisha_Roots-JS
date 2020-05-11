@@ -1,4 +1,3 @@
-/* <---------- Navbar ----------> */
 
 /* Appear scroll icon */
 const scrollIcon = document.querySelector(".header-section .scroll-icon")
@@ -11,6 +10,8 @@ const scroll = new SmoothScroll('.navbar a[href*="#"]', {
 	speed: 300 // a menos mas
 });
 
+
+/* <---------- Navbar ----------> */
 /* Navbar appear on Scroll */
 $(function() {
 	$(".navbar").hide();
@@ -99,7 +100,6 @@ function visibleClassOnScroll() {
 
 
 /* <---------- Responsive Navbar ----------> */
-
 const openIcon = document.querySelector(".hamburger-icon")
 const linksWrapper = document.querySelector(".nav-items-wrapper");
 const backdrop = document.querySelector(".backdrop")
@@ -118,7 +118,6 @@ backdrop.addEventListener("click", () => {
 
 
 /* <---------- Timeline ----------> */
-
 let sliderIndex = 0;
 const timelineEvents = document.querySelectorAll(".timeline-event")
 const numtimelineEvents = document.querySelectorAll(".timeline-images > .timeline-event").length
@@ -159,8 +158,6 @@ function addActiveToController() {
 
 // Switch Event with Buttons
 function switchEvent(dir) {
-	const sliderWidth = parseFloat(getComputedStyle(timelineEvents[0]).width, 10)
-
 	if(typeof dir == "string") {
 		if(dir === "next" && sliderIndex === numtimelineEvents - 1) {
 			sliderIndex = 0;
@@ -174,20 +171,12 @@ function switchEvent(dir) {
 	} else {
 		sliderIndex = dir
 	}
-	
-	let leftDistance = - sliderIndex * sliderWidth
-	
-	// console.log({sliderIndex});
-	// console.log({sliderWidth});
-	// console.log({leftDistance});
+	const sliderWidth = parseFloat(getComputedStyle(timelineEvents[0]).width, 10)
 
-	// timelineImages.style.left = "" + leftDistance + "px";
-	// timelineTexts.style.left = "" + leftDistance + "px";
-
+	let leftDistance = - sliderIndex * sliderWidth;
 	timelineImages.style.transform = "translateX(" + leftDistance + "px)";
 	timelineTexts.style.transform = "translateX(" + leftDistance + "px)";
 
-	// Aprovecho para cambiar el style del selecctionado
 	addActiveToController();
 }
 
