@@ -36,6 +36,7 @@ body {
 h1,h2,h3,h4,h5,h6{
 	font-family: 'Montserrat', sans-serif;
 	color: #000;
+	text-align: start;
 }
 
 
@@ -81,6 +82,9 @@ p {
 
 .justify-text {
 	text-align: justify;
+	/* text-justify: inter-word; */
+	text-justify: auto;
+	/* text-justify: inter-character; */
 }
 
 .italic {
@@ -558,7 +562,6 @@ h2 .title-wrapper:nth-child(2):after {
 
 
 
-
 /* <---------- About Section ----------> */
 
 .about-section {
@@ -567,7 +570,7 @@ h2 .title-wrapper:nth-child(2):after {
 		linear-gradient(
 			rgba(0, 0, 0, 0.15),
 			rgba(0, 0, 0, 0.15)
-		), url("../img/18.JPG");
+		), url("../img/playing_kids.jpg");
 	background-size: cover;
 	background-position: center center;
 	height: 600px;
@@ -1221,7 +1224,7 @@ h2 .title-wrapper:nth-child(2):after {
 
 .groups-block .group {
 	/* height: 200px; */
-	text-align: justify;
+	/* text-align: justify; */
 	/* width: 500px; */
 	/* width: 370px; */
 	width: 50%;
@@ -1385,6 +1388,11 @@ h2 .title-wrapper:nth-child(2):after {
 	margin-bottom: 20px;
 }
 
+.transparency-docs-section ol {
+	list-style: lower-latin;
+}
+
+
 
 /* <---------- Current Projects Section ----------> */
 
@@ -1536,7 +1544,7 @@ a.link:hover {
 /* <---------- Donation Page ----------> */
 
 .donate-methods-section {
-	/* width: 70%; */
+	width: 70%;
 }
 
 .accordion-btn {
@@ -1556,6 +1564,7 @@ a.link:hover {
 }
 
 .accordion-content {
+	/* width: 100%; */
 	max-height: 0;
 	padding: 0 30px;
 	overflow: hidden;
@@ -1592,6 +1601,12 @@ a.link:hover {
 	background: var(--bright-red);
 }
 
+@media (max-width: 1080px) {
+	.donate-methods-section {
+		width: 100%;
+	}
+}
+
 
 
 /* <---------- Footer Section ----------> */
@@ -1601,13 +1616,6 @@ footer {
 	margin-top: 50px;
 	background: var(--darkest-red);
 	padding: 40px 8%;
-}
-
-footer.setToBottom {
-	/* NO FUNCIONA AL DESPLEGAR */
-	/* position: absolute; */
-	/* bottom: 0; */
-	/* margin-top: 1000px; */
 }
 
 .footer-content {

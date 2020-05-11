@@ -27,12 +27,4 @@ accordionBtns.forEach(accBtn => {
 
 
 
-/* <---------- Footer on bottom ----------> */
-
-const body = document.querySelector("body")
-// const bodyHeight = parseFloat(getComputedStyle(body.height, 10));
-var bodyHeight = body.clientHeight;
-if(bodyHeight < screen.height ) {
-	const footer = document.querySelector("footer")
-	footer.classList.add("setToBottom")
-}
+/* <---------- Menu abrir ----------> */
