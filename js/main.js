@@ -15,13 +15,19 @@ const scroll = new SmoothScroll('.navbar a[href*="#"]', {
 /* Navbar appear on Scroll */
 $(function() {
 	$(".navbar").hide();
+	$(".newsletter-popup").hide();
+	$("aside.sm-links").hide();
 	
     $(document).ready(function(){                    
         $(window).scroll(function(){                     
             if ($(this).scrollTop() > $(".header-section").height() - 300) {
                 $('.navbar').fadeIn(400);
+                $(".newsletter-popup").fadeIn(400);
+                $("aside.sm-links").fadeIn(400);
             } else {
-                $('.navbar').fadeOut(400);
+				$('.navbar').fadeOut(400);
+				$(".newsletter-popup").fadeOut(400);
+                $("aside.sm-links").fadeOut(400);
             }
         });
 	});
@@ -85,6 +91,17 @@ function handleIndicator(el) {
 	});
 	el.classList.add("active")	
 }
+
+
+/* <---------- Newsletter ----------> */
+const newsletter = document.querySelector(".newsletter-popup");
+const closeNewsLetter = document.querySelector(".newsletter-popup i.fa-times")
+
+closeNewsLetter.addEventListener("click", () => {
+	newsletter.style.display = "none"
+})
+
+
 
 /* <---------- Fill title ----------> */
 window.addEventListener('scroll', visibleClassOnScroll);
