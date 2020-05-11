@@ -55,8 +55,13 @@ function getOffsetTop() {
 }
 
 window.addEventListener('scroll', activeClassOnScroll);
+console.log("aaa");
+
 function activeClassOnScroll() {
+	console.log("scrolling");
+	
 	let scrollPos = document.documentElement.scrollTop  || document.body.scrollTop; // pixeles que ha bajado el usuario
+	console.log(scrollPos);
 	
 	for(id in sectionsPos) {
 		const offset = 300
