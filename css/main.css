@@ -898,9 +898,9 @@ h2 .title-wrapper:nth-child(2):after {
 		width: 280px;
 	}
 	.map-card.card-sp {
-		top: 150px;
+		top: 47px;
 		left: auto;
-		right: 30px;
+		right: 15px;
 	}
 	.map-card.card-tz {
 		bottom: 60px;
