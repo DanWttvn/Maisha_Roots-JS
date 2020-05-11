@@ -362,7 +362,7 @@ button:active {
 }
 
 
-@media (max-width: 1300px) {
+@media (max-width: 1150px) {
 	.navbar {
 		padding: 0 24px;
 	}
@@ -593,6 +593,7 @@ h2 .title-wrapper:nth-child(2):after {
 	position: fixed;
 	/* width: fit-content; */
 	width: 60%;
+	max-width: 600px;
 	padding: 20px 30px;
 	background: var(--darkest-red);
 	color: var(--off-orange);
@@ -679,7 +680,7 @@ aside.sm-links {
 aside.sm-links i {
 	margin: 5px 0;
 	font-size: 1.9rem;
-	color: var(--light-red);
+	color: var(--off-red);
 	transition: all 0.2s ease-in-out;
 }
 
@@ -943,6 +944,7 @@ aside.sm-links i:hover {
 	}
 	.data-block .data-label-text {
 		margin-top: 20px;
+		padding-left: 0;
 	}
 }
 
@@ -1109,10 +1111,10 @@ aside.sm-links i:hover {
 
 @media (max-width: 480px) {
 	.map-section .btn-sp {
-		left: 12%;
+		left: 9%;
 	}
 	.map-section .btn-tz {
-		right: 7%;
+		right: 4%;
 	}
 }
 
