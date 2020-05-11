@@ -840,7 +840,7 @@ h2 .title-wrapper:nth-child(2):after {
 	padding: 15px 20px 10px;
 	width: 90%;
 	max-width: 800px;
-	font-size: 1rem;
+	font-size: 0.95rem;
 }
 .map-card.card-sp {
 	top: 220px;
@@ -877,11 +877,9 @@ h2 .title-wrapper:nth-child(2):after {
 	.map-card.card-tz {
 		bottom: 150px;
 	}
-
-
 }
 
-@media (max-width: 650px) {
+@media (max-width: 850px) {
 	.map-section .btn-show {
 		display: flex;
 	}
@@ -910,24 +908,26 @@ h2 .title-wrapper:nth-child(2):after {
 		left: 30px;
 	}
 	.map-section .btn-sp {
-		left: 21%;
+		left: 27%;
 		top: 82px;
 	}
 	.map-section .btn-tz {
-		right: 16%;
+		right: 24%;
 		bottom: 65px;
 	}
 	
 }
 
-@media (max-width: 550px) {
+@media (max-width: 700px) {
 	.map-section .btn-sp {
-		left: 12%;
+		left: 21%;
 	}
 	.map-section .btn-tz {
-		right: 7%;
+		right: 16%;
 	}
+}
 
+@media (max-width: 550px) {
 	.map-section .btn-sp {
 		left: 15%;
 	}
