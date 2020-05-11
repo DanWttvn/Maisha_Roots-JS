@@ -1774,12 +1774,25 @@ a.link:hover {
 	background: var(--bright-red);
 }
 
+.donation-opt:active {
+	background: var(--bright-red);
+}
+
 @media (max-width: 1080px) {
 	.donate-methods-section {
 		width: 100%;
 	}
 }
 
+.success-msg {
+	margin-top: 150px;
+	padding: 0 50px;
+	text-align: center;
+	color: var(--dark-red);
+	font-weight: 800;
+	font-size: 3rem;
+	font-style: italic;
+}
 
 
 /* <---------- Footer Section ----------> */
