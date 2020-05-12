@@ -1,14 +1,23 @@
 
-/* Appear scroll icon */
-const scrollIcon = document.querySelector(".header-section .scroll-icon")
-setTimeout(() => {
-	scrollIcon.removeAttribute("hidden")
-}, 1500 )
-
-/* Smooth Scroll */
-const scroll = new SmoothScroll('.navbar a[href*="#"]', {
+/* <---------- Smooth Scroll ----------> */
+const scrollNavbar = new SmoothScroll('.navbar a[href*="#"]', {
 	speed: 300 // a menos mas
 });
+
+
+/* <---------- Scroll icon Header ----------> */
+const scrollIcon = document.querySelector(".header-section .scroll-icon")
+
+/* Appear scroll icon */
+setTimeout(() => {
+	scrollIcon.removeAttribute("hidden")
+}, 1500)
+
+/* Clickable */
+const scrollHeader = new SmoothScroll('.scroll-icon a[href*="#"]', {
+	speed: 800
+});
+
 
 /* <---------- Newsletter ----------> */
 const newsletter = document.querySelector(".newsletter-popup");
@@ -57,7 +66,7 @@ $(function() {
 /* Change Active on Scroll */ 
 const sectionsArray = document.querySelectorAll("section");
 const headerSection = document.querySelector(".header-section");
-// 
+
 const headerWidth = parseFloat(getComputedStyle(headerSection).width, 10);
 
 const navbar = document.querySelector(".navbar")

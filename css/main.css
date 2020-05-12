@@ -78,6 +78,12 @@ h5 {
 p {
 	width: 100%;
 	margin-bottom: 1rem;
+	/* word-break: break-word; */
+	/* word-wrap: break-word; */
+	/* hyphens: auto !important; */
+	/* word-break: keep-all; */
+	/* white-space: normal; */
+
 }
 
 .justify-text {
@@ -87,20 +93,15 @@ p {
 	/* text-justify: inter-character; */
 }
 
-.italic {
+/* .italic {
 	font-weight: bold;
 	font-style: italic;
-}
+} */
 
 a {
 	text-decoration: none;
 }
 
-hr { 	/* ççç borrar */
-	display: none;
-	border-color: #ccc;
-	opacity: 0.1;
-}
 
 /* <---------- General ----------> */
 
@@ -725,6 +726,10 @@ aside.sm-links i:hover {
 	font-size: 38px;
 	color: rgb(170, 170, 170);
 	animation: 0.8s ease-in-out 1.5s infinite scrollIcon;
+}
+
+.header-section .scroll-icon a {
+	color: rgb(170, 170, 170);
 }
 
 @keyframes scrollIcon {
