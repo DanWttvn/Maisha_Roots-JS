@@ -4,6 +4,18 @@
 	box-sizing: border-box;
 }
 
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+input:focus,
+textarea:focus {
+	outline: none;
+}
+
 :root {
 	--darkest-red: rgb(69, 23, 22);
 	--dark-red: rgb(122, 23, 36);
@@ -54,15 +66,10 @@ h2 {
 h3 {
 	width: 100%;
 
-	/* font-size: 2em;
-	font-weight: 600; */
 	font-size: 2.6rem;
 	font-weight: 700;
-
-	margin-bottom: 20px;
-
 	line-height: 1.5em;
-	/* color: var(--dark-purple); */
+	margin-bottom: 20px;
 }
 
 h4 {
@@ -113,9 +120,9 @@ section {
 	width: 100%;
 	max-width: 2500px;
 	margin: 0 auto;
-	/* to skip the navbar height. real sepatation is padding-navbar */
+	/* to skip the navbar height. real sepatation is padding-navbar. to change separation change only margin */
 	padding-top: 100px; 
-	margin-top: -10px;
+	margin-top: -20px;
 
 	display: flex;
 	flex-direction: column;
@@ -125,7 +132,7 @@ section {
 
 .sub-section {
 	width: 100%;
-	margin-top: 50px;
+	margin-top: 45px;
 }
 
 .container {
@@ -434,8 +441,9 @@ button:active {
 
 h2 {
 	display: flex;
-	flex-flow: column nowrap;
+	flex-flow: row wrap;
 	align-items: center;
+	justify-content: center;
 }
 
 h2 .title-wrapper {
@@ -445,7 +453,9 @@ h2 .title-wrapper {
 	left: 0;
 	bottom: 0;
 	right: 0;
+	/* text-align: center; */
 	line-height: 1.2em;
+	padding: 0 10px;
 
 	-webkit-text-stroke-width: 2px;
 	-webkit-text-stroke-color: var(--dark-red);
@@ -461,6 +471,9 @@ h2 .title-wrapper:after {
 	left: 0;
 	bottom: 0;
 	right: 0;
+	/* text-align: center; */
+	padding: 0 10px;
+
 	color: var(--dark-red);
 	content: attr(data-text);
 	display: block;
@@ -1477,7 +1490,7 @@ aside.sm-links i:hover {
 
 /* <---------- Teamers Section ----------> */
 
-.teamers-section p {
+.quote-section p {
 	text-align: center;
 }
 
@@ -1535,7 +1548,7 @@ aside.sm-links i:hover {
 }
 
 
-.teamers-section {
+.quote-section {
 	display: flex;
 	flex-flow: column wrap;
 } 
@@ -1569,8 +1582,96 @@ aside.sm-links i:hover {
 .transparency-docs-section ol {
 	list-style: lower-latin;
 }
+.transparency-docs-section h4 {
+	font-size: 1.3em;
+	font-weight: 700;
+}
+
+/* <---------- Docs Section ----------> */
+.docs-section p {
+	margin-bottom: 0.7em;
+}
 
 
+/* <---------- Complain Section ----------> */ 
+
+.form-box {
+	position: relative;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.form-section {
+	position: relative;
+	height: 60px;
+	width: 70%;
+
+	overflow: hidden;
+	z-index: 200;
+}
+
+.form-section input {
+	width: 100%; 
+	/* height: 60px; */
+	height: 100%;
+	padding-top: 20px;
+	border: none;
+	background: transparent;
+}
+
+.form-section label {
+	position: absolute;
+	color: rgb(185, 185, 185);
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	pointer-events: none;	/* hace que no reaccione al raton, por lo que puedo clickar en el input aunque este encima esto */
+	border-bottom: 1px solid grey;
+
+	background: transparent;
+}
+
+.form-section label::after {
+	content: ""; /* puedo añadir cosas extra despues, pero solo querio styles */
+	position: absolute;
+	left: 0;
+	bottom: -2px;
+	height: 100%;
+	width: 100%;
+	border-bottom: 3px solid var(--darkest-red);
+
+	transform: translateX(-100%); /* para que aparezca desde la izq. luego con overflow hidden se esconde lo que solabelRadioContenta*/
+	transition: transform 0.3s ease;
+}
+
+.label-content {
+	position: absolute;
+	width: 70%;
+	/* font-size: 20px; */
+	font-weight: 500;
+	bottom: 5px;
+	left: 0;
+	transition: all 0.3s ease;
+}
+
+.form-section input:focus + .label-box .label-content, /* el + indica que el que esté debajo. cuando clickamos en el input, afecta al label así: */
+.form-section input:valid + .label-box .label-content { /* cuando se mete info, se queda ahí */
+	transform: translateY(-120%);
+	font-size: 0.9em;
+	color: var(--darkest-red);
+	background: none;
+}
+
+.form-section input:focus + .label-box::after,
+.form-section input:valid + .label-box::after {
+	transform: translateX(0%);
+}
 
 /* <---------- Current Projects Section ----------> */
 
@@ -1614,25 +1715,13 @@ aside.sm-links i:hover {
 /* <---------- Colaborate Section ----------> */
 
 .donate-section {
-	justify-content: space-around;	
+	/* justify-content: space-around; */
+	justify-content: space-between;
 }
 
 .colab-opt {
-	width: 500px;
+	width: 45%;
 	max-width: 100%;
-}
-
-.colab-opt h3 {
-	text-align: center;
-}
-
-.donate-section .colab-opt ul {
-	margin: 0 40px;
-	margin-bottom: 20px;
-	padding: 30px 50px;
-	background: var(--dark-red);
-	color: var(--off-orange);
-	border-radius: 30px;
 }
 
 .donate-section .btn-box {
@@ -1644,11 +1733,10 @@ aside.sm-links i:hover {
 	width: 150px;
 	height: 150px;
 	border-radius: 50%;
-	/* border: 3px var(--bright-red) solid; */
 	padding: 10px;
-	-webkit-box-shadow: 10px 10px 26px -19px rgba(0,0,0,0.68);
-	-moz-box-shadow: 10px 10px 26px -19px rgba(0,0,0,0.68);
-	box-shadow: 10px 10px 26px -19px rgba(0,0,0,0.68);
+	-webkit-box-shadow: 10px 10px 26px -19px rgba(0,0,0,1);
+	-moz-box-shadow: 10px 10px 26px -19px rgba(0,0,0,1);
+	box-shadow: 10px 10px 26px -19px rgba(0,0,0,1);
 
 
 	display: flex;
@@ -1665,7 +1753,6 @@ aside.sm-links i:hover {
 
 .teaming-btn:hover {
 	transform: scale(1.05);
-
 }
 
 a.link {
@@ -1677,11 +1764,8 @@ a.link:hover {
 	color: var(--bright-red);
 }
 
-
-
 .colaborators-wrapper {
 	width: 100%;
-	
 	margin-top: 25px;
 
 	display: flex;
@@ -1718,11 +1802,17 @@ a.link:hover {
 }
 
 
+@media (max-width: 1080px) {
+	.colab-opt {
+		width: 100%;
+	}
+}
+
 
 /* <---------- Donation Page ----------> */
 
-.donate-methods-section {
-	width: 70%;
+.accordion-wrapper {
+	width: 90%;
 }
 
 .accordion-btn {
@@ -1750,8 +1840,10 @@ a.link:hover {
 }
 
 .accordion-content ul {
-	background: rgba(0,0,0,0.3);
-	color: var(--dark-red);
+	background: var(--dark-red);
+	color: var(--off-orange);
+	/* background: rgba(0,0,0,0.3); */
+	/* color: var(--dark-red); */
 	margin: 0 auto;
 	width: fit-content;
 	margin-bottom: 20px;
@@ -1773,6 +1865,7 @@ a.link:hover {
 	margin: 10px 5px;
 	background: var(--dark-red);
 	color: var(--off-orange);
+	transition: all 0.2s ease-in-out;
 }
 
 .donation-opt:hover {
@@ -1781,12 +1874,6 @@ a.link:hover {
 
 .donation-opt:active {
 	background: var(--bright-red);
-}
-
-@media (max-width: 1080px) {
-	.donate-methods-section {
-		width: 100%;
-	}
 }
 
 .success-msg {
