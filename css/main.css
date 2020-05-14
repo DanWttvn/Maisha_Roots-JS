@@ -460,31 +460,33 @@ h2 .title-wrapper:after {
 	left: 0;
 	bottom: 0;
 	right: 0;
-	/* text-align: center; */
 	padding: 0 10px;
 
 	color: var(--dark-red);
-	content: attr(data-text);
+	content: "";
 	display: block;
 	overflow: hidden;
-    transition-property: width;
+    transition-property: all;
     transition-duration: .5s;
     transition-timing-function: cubic-bezier(.23,1,.32,1);
     white-space: nowrap;
-    width: 0
+    width: 0;
 }
 
 .visible h2 .title-wrapper:after {
+	content: attr(data-text);
 	width: 100%;
 }
 
-h2 .title-wrapper:first-child:after {
+.title-wrapper:first-of-type::after {
     transition-delay: .1s;
 }
-h2 .title-wrapper:nth-child(2):after {
-    transition-delay: .4s;
+.title-wrapper:nth-of-type(2)::after {
+	transition-delay: .3s;
 }
 
+
+/*? 2 lineas */
 @media (max-width: 800px) {
 	h2.smaller {
 		font-size: 4rem;
@@ -518,6 +520,50 @@ h2 .title-wrapper:nth-child(2):after {
 	}
 }
 
+
+/*? 1 linea */
+/* @media (max-width: 1000px) {
+	h2 {
+		font-size: 4rem;
+	}
+}
+@media (max-width: 850px) {
+	h2 {
+		font-size: 3.5rem;
+	}
+	h3 {
+		font-size: 2.3rem;
+		line-height: 1.4;
+	}
+}
+@media (max-width: 750px) {
+	h2 {
+		font-size: 3.1rem;
+	}
+}
+@media (max-width: 650px) {
+	h2 {
+		font-size: 2.6rem;
+	}
+}
+@media (max-width: 570px) {
+	h2 {
+		font-size: 2.3rem;
+	}
+	h3 {
+		font-size: 1.9rem;
+	}
+}
+@media (max-width: 500px) {
+	h2 {
+		font-size: 2rem;
+	}
+}
+@media (max-width: 450px) {
+	h2 {
+		font-size: 1.8rem;
+	}
+} */
 
 /* <----------------------------- Layouts ---------------------------> */
 

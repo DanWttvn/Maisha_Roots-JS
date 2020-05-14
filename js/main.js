@@ -18,50 +18,39 @@ const scrollHeader = new SmoothScroll('.scroll-icon a[href*="#"]', {
 	speed: 800
 });
 
-
+//! ACTIVAR
 /* <---------- Newsletter ----------> */
-const newsletter = document.querySelector(".newsletter-popup");
-const closeNewsLetter = document.querySelector(".newsletter-popup i.fa-times")
+// const newsletter = document.querySelector(".newsletter-popup");
+// const closeNewsLetter = document.querySelector(".newsletter-popup i.fa-times")
 
-closeNewsLetter.addEventListener("click", () => {
-	newsletter.style.display = "none"
-	newsletter.classList.add("closed")
-})
+// closeNewsLetter.addEventListener("click", () => {
+// 	newsletter.style.display = "none"
+// 	newsletter.classList.add("closed")
+// })
 
 
 /* <---------- Navbar ----------> */
 /* Navbar appear on Scroll */
 $(function() {
 	$(".navbar").hide();
-	$(".newsletter-popup").hide();
-	$("aside.sm-links").hide();
+	// $(".newsletter-popup").hide();
 	
     $(document).ready(function(){                    
         $(window).scroll(function(){                     
             if ($(this).scrollTop() > $(".header-section").height() - 300) {
 				$('.navbar').fadeIn(400);
-				const userClosed = newsletter.classList.contains("closed");
-				if(!userClosed) {
-					$(".newsletter-popup").fadeIn(400);
-				}
-                $("aside.sm-links").fadeIn(400);
+				// const userClosed = newsletter.classList.contains("closed");
+				// if(!userClosed) {
+				// 	$(".newsletter-popup").fadeIn(400);
+				// }
             } else {
 				$('.navbar').fadeOut(400);
-				$(".newsletter-popup").fadeOut(400);
-                $("aside.sm-links").fadeOut(400);
+				// $(".newsletter-popup").fadeOut(400);
             }
         });
 	});
 })
 
-// // Appear on Scroll
-// if (scrollPos > headerWidth - 250) {
-// 	navbar.style.top = "0"
-// 	navbar.style.opacity = "1"
-// } else {
-// 	navbar.style.top = "-90px"
-// 	navbar.style.opacity = "0"
-// }
 
 /* Change Active on Scroll */ 
 const sectionsArray = document.querySelectorAll("section");
@@ -86,10 +75,11 @@ function activeClassOnScroll() {
 	let scrollPos = document.documentElement.scrollTop  || document.body.scrollTop; // pixeles que ha bajado el usuario
 	
 	for(id in sectionsPos) {
-		const offset = 300
+		//! cambiar segun height user (ordena 500)
+		const offset = 500
 		if(sectionsPos[id] - offset <= scrollPos) {
-			document.querySelector(".active").classList.remove("active")
-			document.querySelector(`a[href*=${id}]`).classList.add("active")
+			document.querySelector(".navbar .active").classList.remove("active")
+			document.querySelector(`.navbar a[href*=${id}]`).classList.add("active")
 		}
 	}
 }
@@ -117,7 +107,8 @@ function handleIndicator(el) {
 window.addEventListener('scroll', visibleClassOnScroll);
 function visibleClassOnScroll() {
 	let scrollPos = document.documentElement.scrollTop  || document.body.scrollTop; 
-	for(id in sectionsPos) {		
+	for(id in sectionsPos) {
+		//! cambiar con width (ordena 500)
 		const offset = 500
 		if(sectionsPos[id] - offset <= scrollPos) {
 			document.querySelector(`#${id}`).classList.add("visible")
