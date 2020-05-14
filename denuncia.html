@@ -23,78 +23,105 @@
 			<div class="backdrop"></div>
 			<div class="close-btn"><i class="fas fa-times"></i></div>
 			<ul>
-				<a class="nav-item active" href="#about">Quiénes somos</a>
-				<a class="nav-item" href="#timeline">De dónde venimos</a>
-				<a class="nav-item" href="#structure">Cómo trabajamos</a>
-				<a class="nav-item" href="#current-projects">Qué hacemos</a>
-				<a class="nav-item" href="#colaborate">Colabora</a>
-				<a class="nav-item" href="#transparency">Transparencia</a>
+				<a class="nav-item" href="./index.html#about">Quiénes somos</a>
+				<a class="nav-item" href="./index.html#timeline">De dónde venimos</a>
+				<a class="nav-item" href="./index.html#structure">Cómo trabajamos</a>
+				<a class="nav-item" href="./index.html#current-projects">Qué hacemos</a>
+				<a class="nav-item" href="./index.html#colaborate">Colabora</a>
+				<a class="nav-item" href="./index.html#transparency">Transparencia</a>
 			</ul>
 		</div>
 	</nav>
 
-	<section>
+	<section id="complain-page">
 		<h3>Denuncias</h3>
 	
 		<form action="https://formspree.io/xlepdapb" method="POST" class="form-box" >
 	
-			<h4>Datos de la denuncia</h4>	
-			<div class="form-section">
-				<textarea type="text" name="complain" id="complain" required></textarea>
-				<label for="complain" class="label-box">
+			<h4>Datos de la denuncia</h4>
+			<div class="form-section type-textarea">
+				<textarea type="text" name="accion_a_denunciar" id="accion_a_denunciar" required></textarea>
+				<label for="accion_a_denunciar" class="label-box">
 					<span class="label-content">Acción a denunciar</span>
 				</label>
 			</div>
 	
-			<div class="form-section">
+			<div class="form-section type-input">
 				<input type="text" name="date" id="date" required/>
 				<label for="date" class="label-box">
 					<span class="label-content">Fecha</span>
 				</label>
 			</div>
 
-			<div class="form-section">
-				<input type="text" name="people" id="people" required/>
-				<label for="people" class="label-box">
-					<span class="label-content">Personas involucradas</span>
+			<div class="form-section type-input">
+				<input type="text" name="personas_involucradas" id="personas_involucradas" required/>
+				<label for="personas_involucradas" class="label-box">
+					<span class="label-content">Personas involucradas (de la Asociación y externas a la misma)</span>
 				</label>
 			</div>
 	
+			<h4>Datos de contacto</h4>
+			<div class="form-section type-input">
+				<input type="text" name="name" id="name" required/>
+				<label for="name" class="label-box">
+					<span class="label-content">Nombre y Apellidos</span>
+				</label>
+			</div>
 
-
-
+			<div class="form-section type-input">
+				<input type="text" name="id" id="id" required/>
+				<label for="id" class="label-box">
+					<span class="label-content">DNI/Pasaporte</span>
+				</label>
+			</div>
 	
-			<div class="form-section">
+			<div class="form-section type-input">
 				<input type="email" name="email" id="email" required/>
 				<label for="email" class="label-box">
-					<span class="label-content">Contact Email</span>
+					<span class="label-content">Correo Electrónico</span>
 				</label>
+			</div>
+
+			<div class="form-section type-input">
+				<input type="text" name="phone" id="phone" required/>
+				<label for="phone" class="label-box">
+					<span class="label-content">Teléfono</span>
+				</label>
+			</div>
+
+			<div class="form-section type-input">
+				<input type="text" name="relacion_con_PS" id="relacion_con_PS" required/>
+				<label for="relacion_con_PS" class="label-box">
+					<span class="label-content">Relación con la Asociación Progress Spain</span>
+				</label>
+			</div>
+
+			<div>
+				<small>Para adjuntar algún archivo, puedes enviarlo a <a href="mailto:canaldenuncias@maisharoots.org" class="link" target="_blank">canaldenuncias@maisharoots.org</a></small>
 			</div>
 	
 			<div class="">
-				<input class="" type="submit" name="submit" value="Enviar"></input>
+				<input type="submit" name="submit" value="Enviar"></input>
 			</div>			
 			
 		</form>
 	</section>
 
-
 	
 	<footer>
 		<div class="footer-content">
 			<div class="list-sections">
-				<a href="#about">Quiénes somos</a>
+				<a href="./index.html#about">Quiénes somos</a>
 				<div class="divider"></div>
-				<a href="#colaborate">Colabora</a>
+				<a href="./index.html#colaborate">Colabora</a>
 				<div class="divider"></div>
-				<a href="#colaborate">Hazte voluntaria/o</a>
+				<a href="./index.html#colaborate">Hazte voluntaria/o</a>
 			</div>
 
 			<div class="newsletter newsletter-footer">
 				<p>Subscribete a nuestra newsletter y no te pierdas ninguna novedad!</p>
 				<form action="https://formspree.io/mvowgqrz" method="POST">
 					<input placeholder="introduce tu email..." type="email" name="_replyto">
-					<!-- <input type="hidden" name="_next" value="https://mysite.com/thanks.html"/> -->
 					<button><i class="fas fa-chevron-down"><input type="submit" value=""></i></button>
 				</form>
 			</div>
@@ -111,11 +138,7 @@
 		</div>
 	</footer>
 
-
-
-	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
-	<script src="./js/main.js"></script>
+	<script src="./js/responsive_navbar.js"></script>
 </body>
 </html>
 
