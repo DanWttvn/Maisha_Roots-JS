@@ -122,12 +122,14 @@ section {
 }
 
 .sub-section {
+	margin-top: -20px;
+	/* margin-bottom: 45px; */
 	width: 100%;
-	margin-top: 45px;
+	padding-top: 100px; /* 45px + 90 del margin */
 }
 
 .container {
-	padding: 0 120px;
+	padding-left: 120px; padding-right: 120px;
 
 	display: flex;
 	flex-direction: column;
@@ -135,7 +137,7 @@ section {
 }
 
 .container-narrow {
-	padding: 0 170px;
+	padding-left: 170px; padding-right: 170px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -144,28 +146,28 @@ section {
 
 @media (max-width: 1300px) {
 	.container-narrow {
-		padding: 0 120px;
+		padding-left: 120px; padding-right: 120px;
 	}
 }
 
 @media (max-width: 1080px) {
 	.container,
 	.container-narrow {
-		padding: 0 80px;
+		padding-left: 80px; padding-right: 80px;
 	}
 }
 
 @media (max-width: 650px) {
 	.container,
 	.container-narrow {
-		padding: 0 40px;
+		padding-left: 40px; padding-right: 40px;
 	}
 }
 
 @media (max-width: 480px) {
 	.container,
 	.container-narrow {
-		padding: 0 20px;
+		padding-left: 20px; padding-right: 20px;
 	}
 }
 
@@ -257,6 +259,7 @@ button:active {
 
 .navbar {
 	display: none;
+
 	width: 100%;
 	height: 90px;
 	position: fixed;
@@ -277,11 +280,13 @@ button:active {
 .navbar-brand {
 	width: 200px;
 	/* padding: 20px; */
-	z-index: 110;
+	/* z-index: 110; */
+	z-index: 20;
 }
 .navbar-brand img {
 	width: 100%;
-	z-index: 110;
+	/* z-index: 110; */
+	z-index: 20;
 }
 
 .nav-item {
@@ -333,7 +338,8 @@ button:active {
 /* Sections links */
 .navbar .main-menu > li {
 	position: relative;
-	z-index: 110;
+	/* z-index: 110; */
+	z-index: 20;
 	display: flex; flex-flow: row nowrap; justify-content: center; align-items: center;
 }
 
@@ -347,7 +353,8 @@ button:active {
 	padding: 10px 0;
 	font-size: 0.85em;
 	pointer-events: none;
-	z-index: 105;
+	/* z-index: 105; */
+	z-index: 15;
 	
 	display: flex; flex-flow: row nowrap; justify-content: center; align-items: center;
 	transition: all 0.4s ease-in-out;
@@ -368,12 +375,12 @@ button:active {
 .main-menu > li.with-sub:hover > .sub-menu {
 	top: 40px;
 	opacity: 1;
-	/* z-index: 101; */
 	pointer-events: all;
 }
 
 .main-menu > li:hover > .sub-menu .nav-item {
-	z-index: 104;
+	/* z-index: 104; */
+	z-index: 14;
 }
 
 /* Sub-menu background */
@@ -403,7 +410,7 @@ button:active {
 }
 
 .hamburger-icon {
-	z-index: 1;
+	z-index: 10;
 	cursor: pointer;
 	font-size: 20px;
 }
@@ -446,19 +453,21 @@ button:active {
 	.hamburger-icon,
 	.close-btn {
 		display: block;
-		z-index: 100;
+		/* z-index: 100; */
+		/* z-index: 10; */
 	}
 
 	.hamburger-icon {
 		position: absolute;
 		right: 24px;
+		z-index: 10;
 	}
 
 	.close-btn {
 		position: absolute;
 		top: 24px;
 		right: -90vh;
-		z-index: 10;
+		z-index: 15;
 		transition: all 0.3s ease-in-out;
 	}
 
@@ -468,11 +477,13 @@ button:active {
 	}
 
 	.navbar-brand {
-		z-index: 100;
+		/* z-index: 100; */
+		z-index: 10;
 	}
 
 	.nav-items-wrapper {
-		z-index: 103;
+		/* z-index: 103; */
+		z-index: 13;
 	}
 
 	.navbar .main-menu {
@@ -487,7 +498,6 @@ button:active {
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		/* z-index: 103; */
 		transition: all 0.3s ease-in-out;
 	}
 
@@ -603,8 +613,11 @@ h2 .title-wrapper:after {
 	h2 {
 		font-size: 2.8rem;
 	}
+	h2 .smaller {
+		font-size: 2.6rem;
+	}
 	h2.smaller {
-		font-size: 2.3rem;
+		font-size: 2.1rem;
 	}
 
 	h3 {
@@ -918,7 +931,17 @@ aside.sm-links i:hover {
 /* <---------- About Section ----------> */
 
 .about-section {
+	position: relative;
+	height: 600px;
+}
+
+.about-section .bg {
 	z-index: 0;
+	width: 100%;
+	height: 100%;
+	/* position: absolute; */
+	top: 0;
+	left: 0;
 	background:  
 		linear-gradient(
 			rgba(0, 0, 0, 0.15),
@@ -926,11 +949,10 @@ aside.sm-links i:hover {
 		), url("../img/playing_kids.jpg");
 	background-size: cover;
 	background-position: center center;
-	height: 600px;
 }
 
 .about-section .text-block {
-	position: relative;
+	position: absolute;
 	padding: 0 30px;
 	width: 60%;
 	max-width: 1000px;
@@ -1144,6 +1166,14 @@ aside.sm-links i:hover {
 .map-section {
 	position: relative;
 	width: 100%;
+	height: 900px; /* img + padding */
+}
+
+.map-section .bg {
+	position: absolute;
+	top: 100px; /* padding-top of sub-section */
+	z-index: -1;
+	width: 100%;
 	height: 800px;
 
 	background: url(../img/map.jpg);
@@ -1203,7 +1233,7 @@ aside.sm-links i:hover {
 	font-size: 0.95rem;
 }
 .map-card.card-sp {
-	top: 220px;
+	top: 315px;
 	left: 50px;
 }
 .map-card.card-tz {
@@ -1222,6 +1252,9 @@ aside.sm-links i:hover {
 
 @media (max-width: 1080px) {
 	.map-section {
+		height: 700px;
+	}
+	.map-section .bg {
 		height: 600px;
 	}
 	.map-section p	{
@@ -1232,7 +1265,7 @@ aside.sm-links i:hover {
 		width: 42%;
 	}
 	.map-card.card-sp {
-		top: 170px;
+		top: 280px;
 	}
 	.map-card.card-tz {
 		bottom: 150px;
@@ -1258,7 +1291,7 @@ aside.sm-links i:hover {
 		width: 280px;
 	}
 	.map-card.card-sp {
-		top: 47px;
+		top: 157px;
 		left: auto;
 		right: 15px;
 	}
@@ -1269,7 +1302,7 @@ aside.sm-links i:hover {
 	}
 	.map-section .btn-sp {
 		left: 27%;
-		top: 82px;
+		top: 182px;
 	}
 	.map-section .btn-tz {
 		right: 24%;
@@ -1310,7 +1343,7 @@ aside.sm-links i:hover {
 .timeline {
 	position: relative;
 	width: 100%;
-	height: 600px;
+	height: 690px;
 
 	color: white;
 	overflow: hidden;
@@ -1325,7 +1358,7 @@ aside.sm-links i:hover {
 	position: relative;
 	z-index: 3;
 
-	margin-top:15px;
+	margin-top: 0px;
 	margin-left: 15%;	/* çç mirar */
 	color: white;
 }
@@ -1446,6 +1479,7 @@ aside.sm-links i:hover {
 .timeline-images {
 	position: absolute;
 	width: 100%;
+	margin-top: 90px;
 	top: 0;
 	left: 0;
 
@@ -1502,10 +1536,17 @@ aside.sm-links i:hover {
 }
 
 @media (max-width: 650px) {
-	/* ! en 2016, ponerle un scroll invisible y que vaya desapareciendo en los bordes */
 	.timeline {
-		height: 650px;
+		height: 740px;
 	}
+
+	.timeline-texts > .timeline-event {
+		padding: 50px 5%;
+	}
+	.controls-wrapper {
+		bottom: -10px;
+	}
+
 }
 
 

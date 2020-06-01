@@ -1,4 +1,26 @@
 
+/* Navbar appear on Scroll */
+$(function() {
+	$(".navbar").hide();
+	// $(".newsletter-popup").hide();
+	
+    $(document).ready(function(){                    
+        $(window).scroll(function(){                     
+            if ($(this).scrollTop() > $(".header-section").height() - 300) {
+				$('.navbar').fadeIn(400);
+				// const userClosed = newsletter.classList.contains("closed");
+				// if(!userClosed) {
+				// 	$(".newsletter-popup").fadeIn(400);
+				// }
+            } else {
+				$('.navbar').fadeOut(400);
+				// $(".newsletter-popup").fadeOut(400);
+            }
+        });
+	});
+})
+
+
 /* <---------- Smooth Scroll ----------> */
 const scrollNavbar = new SmoothScroll('.navbar a[href*="#"]', {
 	speed: 300 // a menos mas
@@ -30,27 +52,6 @@ const scrollHeader = new SmoothScroll('.scroll-icon a[href*="#"]', {
 
 
 /* <---------- Navbar ----------> */
-/* Navbar appear on Scroll */
-$(function() {
-	$(".navbar").hide();
-	// $(".newsletter-popup").hide();
-	
-    $(document).ready(function(){                    
-        $(window).scroll(function(){                     
-            if ($(this).scrollTop() > $(".header-section").height() - 300) {
-				$('.navbar').fadeIn(400);
-				// const userClosed = newsletter.classList.contains("closed");
-				// if(!userClosed) {
-				// 	$(".newsletter-popup").fadeIn(400);
-				// }
-            } else {
-				$('.navbar').fadeOut(400);
-				// $(".newsletter-popup").fadeOut(400);
-            }
-        });
-	});
-})
-
 
 /* Change Active on Scroll */ 
 const sectionsArray = document.querySelectorAll("section");

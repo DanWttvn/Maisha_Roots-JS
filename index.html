@@ -24,14 +24,12 @@
 			<div class="backdrop"></div>
 			<div class="close-btn"><i class="fas fa-times"></i></div>
 
-
-			<!-- 3 TRY: como desplegable normal(aunque en hztal) + barra de fondo  -->
 			<ul class="main-menu">
 				<li class="with-sub"><a class="nav-item active" href="#about">Quiénes somos</a>
 					<ul class="sub-menu">
-						<li><a class="nav-item" href="#struc">Conócenos</a></li>
-						<li><a class="nav-item" href="#">Dónde trabajamos</a></li>
-						<li><a class="nav-item" href="#">Nuestro contexto</a></li>
+						<li><a class="nav-item" href="#know-us">Conócenos</a></li>
+						<li><a class="nav-item" href="#where">Dónde trabajamos</a></li>
+						<li><a class="nav-item" href="#context">Nuestro contexto</a></li>
 					</ul>
 				</li>
 				
@@ -101,7 +99,8 @@
 			</span>
 		</h2>
 
-		<div class="sub-section flex-row align-center about-section">
+		<div id="know-us" class="sub-section flex-row align-center about-section">
+			<div class="bg"></div>
 			<div class="text-block">
 				<h3>Conócenos</h3>
 				<p>
@@ -137,32 +136,36 @@
 		</div>
 
 
-		<div class="sub-section map-section container">
-			<h3>Dónde trabajamos</h3>
-			<span class="btn-show btn-sp"><button >+</button></span>
-			<span class="btn-show btn-tz"><button>+</button></span>
-			<div class="map-card card-sp">
-				<i class="fas fa-times close-sp"></i>
-				<h4>España</h4>
-				<p>
-					Desde España intentamos reforzar la labor que se lleva a cabo en Tanzania. Creamos puentes culturales a través de programas de sensibilización (principalmente en centros educativos) y realizamos actividades de recaudación de fondos para financiar los proyectos de Tanzania.
-					<!-- <br> -->
-					Nuestra acción y parte del programa de voluntariado se desarrollan, mayoritariamente, en la Comunidad de Madrid, aunque también se llevan a cabo actividades en otras comunidades autónomas, especialmente en Cataluña, donde también contamos con una delegación.
-				</p>
+		<div id="where" class="sub-section map-section">
+			<div class="bg"></div>
+			
+			<div class="container">
+				<h3>Dónde trabajamos</h3>
+				<span class="btn-show btn-sp"><button >+</button></span>
+				<span class="btn-show btn-tz"><button>+</button></span>
+				<div class="map-card card-sp">
+					<i class="fas fa-times close-sp"></i>
+					<h4>España</h4>
+					<p>
+						Desde España intentamos reforzar la labor que se lleva a cabo en Tanzania. Creamos puentes culturales a través de programas de sensibilización (principalmente en centros educativos) y realizamos actividades de recaudación de fondos para financiar los proyectos de Tanzania.
+						<!-- <br> -->
+						Nuestra acción y parte del programa de voluntariado se desarrollan, mayoritariamente, en la Comunidad de Madrid, aunque también se llevan a cabo actividades en otras comunidades autónomas, especialmente en Cataluña, donde también contamos con una delegación.
+					</p>
+				</div>
+				<div class="map-card card-tz">
+					<i class="fas fa-times close-tz"></i>
+					<h4>Tanzania</h4>
+					<p>
+						Actualmente, desarrollamos nuestra actividad en la ciudad de Arusha, al norte de Tanzania, aunque no descartamos expandir nuestras acciones por otras zonas del país.
+						<br>					
+						Aquí es donde se desarrollan los proyectos de cooperación al desarrollo y los programas de voluntariado.
+					</p>
+				</div>			
 			</div>
-			<div class="map-card card-tz">
-				<i class="fas fa-times close-tz"></i>
-				<h4>Tanzania</h4>
-				<p>
-					Actualmente, desarrollamos nuestra actividad en la ciudad de Arusha, al norte de Tanzania, aunque no descartamos expandir nuestras acciones por otras zonas del país.
-					<br>					
-					Aquí es donde se desarrollan los proyectos de cooperación al desarrollo y los programas de voluntariado.
-				</p>
-			</div>			
 		</div>
 
 
-		<div class="sub-section container-narrow context-section">
+		<div id="context" class="sub-section container-narrow context-section">
 			<h3>Nuestro contexto</h3>
 			<div class="full-width">
 				<p>
@@ -285,7 +288,9 @@
 				<div class="timeline-event">
 					<div class="timeline-event-title">2017</div>
 					<p>
-						En 2017, abrimos una segunda aula y construimos un espacio público que sirvió para proyectar películas, ofrecer comidas, proveer de juegos de mesa y libros a los habitantes de la zona y, en definitiva, crear comunidad en un barrio en expansión.
+						Así, a finales de 2016 y principios de 2017 levantamos un aula de pre-primaria para 25 niños y niñas en riesgo de exclusión social. También desarrollamos talleres sociales con la comunidad y comenzamos un campamento deportivo para jóvenes. 
+					<br>
+						Además, abrimos una segunda aula y construimos un espacio público que sirvió para proyectar películas, ofrecer comidas, proveer de juegos de mesa y libros a los habitantes de la zona y, en definitiva, crear comunidad en un barrio en expansión.
 					</p>
 				</div>
 				
@@ -293,9 +298,6 @@
 					<div class="timeline-event-title">2016</div>
 					<p>
 						Desde 2016 y hasta 2019 lanzamos, junto con la ONG tanzana Progress for Africa, un proyecto propio llamado ‘Chagua Maisha’. Bajo este nombre, que en swahili significa “elige vida”, desarrollamos diferentes proyectos de cooperación al desarrollo destinados a contribuir a la mejora de vida de la población beneficiaria, en un barrio en expansión y con un acceso limitado a recursos básicos, denominado ‘Born City’.
-					</p>
-					<p>
-						Así, durante el año 2016 levantamos un aula de pre-primaria para 25 niños y niñas en riesgo de exclusión social, y se llevaron a cabo talleres sociales con la comunidad. Por otra parte, empezó lo que ha sido una de las actividades más exitosas de Chagua Maisha, el Summercamp o campamento deportivo.
 					</p>
 				</div>
 
@@ -317,7 +319,7 @@
 			<span class="title-wrapper" data-text="Cómo">
 				<span class="title">Cómo</span>
 			</span>
-			<span class="title-wrapper" data-text="trabajamos">
+			<span class="title-wrapper smaller" data-text="trabajamos">
 				<span class="title">trabajamos</span>
 			</span>
 		</h2>
