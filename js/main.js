@@ -75,7 +75,7 @@ window.addEventListener('scroll', activeClassOnScroll);
 function activeClassOnScroll() {
 	let scrollPos = document.documentElement.scrollTop  || document.body.scrollTop; // pixeles que ha bajado el usuario
 	
-	for(id in sectionsPos) {
+	for(id in sectionsPos) {		
 		//! cambiar segun height user (ordena 500)
 		const offset = 500
 		if(sectionsPos[id] - offset <= scrollPos) {
@@ -84,7 +84,6 @@ function activeClassOnScroll() {
 		}
 	}
 }
-
 
 /* Change active on Click */ 
 const navItems = document.querySelectorAll(".nav-item");
@@ -97,6 +96,7 @@ navItems.forEach(item => {
 	});
 })
 
+//! change to active only the main li. select parent
 function handleIndicator(el) {
 	navItems.forEach(item => {
 		item.classList.remove("active")

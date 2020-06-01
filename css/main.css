@@ -1700,6 +1700,13 @@ aside.sm-links i:hover {
 
 /* <---------- Teamers Section ----------> */
 
+
+.quote-section {
+	display: flex;
+	flex-flow: column wrap;
+} 
+
+
 .quote-section p {
 	text-align: center;
 }
@@ -1714,54 +1721,43 @@ aside.sm-links i:hover {
 	line-height: 1.3em;
 	text-align: center;
 
-	/* color: var(--bright-purple); */
-	/* color: var(--off-orange); */
-	/* color: var(--bright-red); */
 	color: var(--dark-red);
-	/* color: var(--dark-purple); */
 	margin-bottom: 10px;
-
 }
 
 .quote span {
 	z-index: -1;
-	position: absolute;
-	font-size: 3em;
-	/* color: #ccc; */
+	position: relative;
+	font-size: 1em;
 	color: var(--off-orange);
 }
 
-.quote span:first-child {
-	top: 15px;
-	left: 0px;
+.quote span::before {
+	position: absolute;
+	font-size: 3em;
+	top: 10px
 }
+.quote span:first-child::before {
+	content: "“";
+	left: -50px;
+}
+.quote span:nth-child(2)::before {
+	content: "”";
+}
+
 
 @media (max-width: 1300px) {
-	.quote {
-		font-size: 3rem;
-	}
-
+	.quote { font-size: 3rem; }
 }
-
 @media (max-width: 950px) {
-	.quote {
+	.quote { 
 		font-size: 2.5rem;
 		width: 100%;
-
 	}
 }
-
 @media (max-width: 480px) {
-	.quote {
-		font-size: 2rem;
-	}
+	.quote { font-size: 2rem; }
 }
-
-
-.quote-section {
-	display: flex;
-	flex-flow: column wrap;
-} 
 
 .teaming-call {
 	width: -webkit-fit-content;
@@ -2039,11 +2035,15 @@ a.link:hover {
 	width: -webkit-fit-content;
 	width: -moz-fit-content;
 	width: fit-content;
-	height: 152px;
 	margin: 0 8px 20px;
 	box-shadow: 0px 0px 29px -15px rgba(0,0,0,0.68);
+	height: 120px;
 
 	transition: all 0.3s ease-in-out;
+}
+
+.colab-btn img {
+	height: 120px;
 }
 
 .colab-btn .overlay {
