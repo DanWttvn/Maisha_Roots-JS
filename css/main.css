@@ -505,6 +505,14 @@ button:active {
 		width: 100%;
 	}
 
+	/** Too much */
+	/* .main-menu > li.with-sub > .sub-menu {
+		top: 40px;
+		opacity: 1;
+		pointer-events: all;
+	} */
+
+
 	.nav-item {
 		font-size: 1em;
 	}
@@ -1970,7 +1978,7 @@ aside.sm-links i:hover {
 }
 
 
-/* <---------- Colaborate Section ----------> */
+/* <---------- collaborate Section ----------> */
 
 .donate-section {
 	/* justify-content: space-around; */
