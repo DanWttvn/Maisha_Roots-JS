@@ -1,334 +1,174 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta charset="utf-8" />
-        <meta http-equiv="pragma" content="no-cache">
-        <meta http-equiv="cache-control" content="no-store,no-cache">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wghts@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>Maisha Roots</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="img/favicons/favicon.ico" type="image/x-icon">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <script src="https://kit.fontawesome.com/36e279864a.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="./css/main.css">
+</head>
+<body id="anti-covid-page">
 
-        <title>Maisha Roots</title>
-        <meta name="description" content="ONG de desarrollo con foco de acci&oacute;n en Arusha, Tanzania. A&uacute;na el trabajo de comunidades locales y voluntarias/os internacionales." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="keywords" content="Arusha, Tanzania, voluntariado, cooperación, desarrollo, internacional, África, ONG" />
-        <meta name="author" content="Armando Ruiz" />
-        <meta name="REVISIT-AFTER" content="15 Days" />
-        <meta name="ROBOTS" content="All" />
-        <meta name="RATING" content="general" />
-
-        <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
-
-        <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="img/favicons/favicon.ico" type="image/x-icon">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <script src="https://kit.fontawesome.com/36e279864a.js" crossorigin="anonymous"></script>
-
-        <link href="./css/styles.css" type="text/css" rel="stylesheet" />
-        <link href="./css/covid-styles.css" type="text/css" rel="stylesheet" />
-        <style type="text/css">
-            #welcome > header { background-image:url('./img/maisha/heart_in_the_field.jpg');}
-            #welcome #headerWelcomeContainer { background-image: url('./img/maisha/heart_in_the_field.jpg'); /*background-position-x*/background-position:center center !important; height:100vh; /*then, jQuery will resize it */}
-            .fullParallax, .noParallax { display:table; width:100%; vertical-align:middle; position:relative; margin-top:0;
-                background-attachment: fixed; background-repeat: no-repeat; background-size: cover;}
-            .fullParallax .container, .noParallax .container { padding:0; display:table-cell; vertical-align:middle;}
-            @media all and (max-width:1041px){#welcome #headerWelcomeContainer{background-image:url('./img/maisha/heart_in_the_field.jpg');}}
-            @media all and (max-width:790px){#welcome #headerWelcomeContainer{background-image:url('./img/maisha/heart_in_the_field.jpg');}}
-            body.nav-expanded{margin-left:-20em;}
-            #nav{display:table;width:100%;/*background:rgba(255,255,255,0.95);*/z-index:1000;position:fixed;min-height:80px;top:0;left:0;right:0;}
-            #nav.bgNav { background:rgba(255,255,255,0.95);-webkit-transition:all 0.5s;-moz-transition:all 0.5s;-ms-transition:all 0.5s;-o-transition:all 0.5s;transition:all 0.5s;}
-            #nav > .table { min-width:90%;}
-            #nav #logo{display:block;width:1px;position:relative;}
-            #nav #logo.showMe{width:75px;}
-            #nav #logo figure{display:block;width:55px;position:absolute;top:5px;left:-37px;opacity:0;filter:alpha(opacity=0);}
-            #nav #logo.showMe figure{left:0;opacity:1;filter:alpha(opacity=100);}
-            #nav #logo figure img{-webkit-transition:all 0.5s;-moz-transition:all 0.5s;-ms-transition:all 0.5s;-o-transition:all 0.5s;transition:all 0.5s ease;}
-            #nav ul{/*display:table;margin:0 auto;*/
-                border: none !important; width: 100%;
-                display: flex !important;
-                -webkit-box-flex: 1;
-                -ms-flex: 1 0 auto;
-                -webkit-flex: 1 0 auto;
-                flex: 1 1 auto;
-                align-items: center;
-                justify-content: space-between;
-            }
-            #nav ul > li{/*display:block;float:left;*/
-                display: table-cell !important;
-                float: none !important;
-                text-align: center;
-                border: none !important;
-                z-index: auto !important;
-                margin: 0 !important;
-            }
-            #nav ul > li > a{display:block;float:left;color:#aaa;padding:5px 0;margin:20px 10px;/*font-size:0.7em;*/font-family:"Open Sans",'Segoe UI',"Helvetica Neue",Helvetica,Arial;}
-            #nav.bgNav ul > li > a{color:#aaa;}
-            #nav ul > li > a:hover{color:#2b2b2b;text-decoration:none;}
-            #nav ul > li > a.active{color:#ee7273;}
-            body.nav-expanded #nav{right:20em;}
-            nav#nav,
-            nav#navMobile{-webkit-transition:right 0.3s;-moz-transition:right 0.3s;-ms-transition:right 0.3s;-o-transition:right 0.3s;transition:right 0.3s;}
-            nav#navMobile{position:fixed;top:0;right:-20em;width:20em;height:100%;background-color:#ffffff;color:#848E96;display:block;z-index:1000;overflow:auto;}
-            .nav-expanded nav#navMobile{right:0em;}
-            .logoMobile{margin:15px 0 0 20px;width:60px;}
-            .logoMobile img{background:#ccc;}
-            #navMobile ul{display:block;margin:0 auto;}
-            #navMobile ul > li{display:block;}
-            #navMobile ul > li > a{display:block;color:#aaa;padding:10px 0;margin:10px 20px;font-size:1.3em;font-family:"Open Sans",'Segoe UI',"Helvetica Neue",Helvetica,Arial;}
-            #navMobile ul > li > a:hover{color:#2b2b2b;text-decoration:none;}
-            #navMobile ul > li > a.active{color:#ee7273;}
-            .nav-logo{padding:0 0 0 0.24em;display:block;background:url(img/maisha/logo.png) 0 -135px no-repeat transparent;width:135px;height:55px;font-size:1em;margin:17px 0 10px 29px;text-indent:-9999px}
-            .nav-logo:hover{}
-            .nav-close{color:#000;color:rgba(0,0,0,0.4);padding:1.3em;display:block;position:absolute;top:0;right:0;font-size:1.5em;font-family:Raleway, Arial;}
-            .nav-close:hover{color:#000;}
-            #expandedLogo{width:60px;display:none;color:#000;position:fixed;top:0;left:1.4em;margin:0.6em 0 0 0;-webkit-transition:all 0.3s;-moz-transition:all 0.3s;-ms-transition:all 0.3s;-o-transition:all 0.3s;transition:all 0.3s;z-index:1002;opacity:0;filter:alpha(opacity=0);}
-            #expandedLogo img{padding:7px;-webkit-transition:background 0.7s;-moz-transition:background 0.7s;-ms-transition:background 0.7s;-o-transition:background 0.7s;transition:background 0.7s;}
-            #expandedLogo.show{opacity:1;filter:alpha(opacity=100);}
-            .nav-expanded #expandedLogo{left:-20em;}
-            a.nav-expander{display:block;color:#000;position:fixed;top:0;right:-20em;text-transform:uppercase;font-size:1em;font-weight:400;text-decoration:none;margin:1.6em 2em 2em 0;-webkit-transition:all 0.3s;-moz-transition:all 0.3s;-ms-transition:all 0.3s;-o-transition:all 0.3s;transition:all 0.3s;z-index:1001;-webkit-text-shadow:0 0 3px rgba(255,255,255,1);-moz-text-shadow:0 0 3px rgba(255,255,255,1);-ms-text-shadow:0 0 3px rgba(255,255,255,1);-o-text-shadow:0 0 3px rgba(255,255,255,1);text-shadow:0 0 3px rgba(255,255,255,1);}
-            a.nav-expander.fixed{position:fixed;top:0;}
-            a.nav-expander > span{position:relative;}
-            a.nav-expander > span.navicon{float:right;display:block;padding:10px;}
-            .nav-expanded a.nav-expander.fixed{right:20em;}
-            a.nav-expander > span.navicon.bgW{background:rgba(255,255,255,0.7);}
-            a.nav-expander > span.navicon > span{display:block;overflow:hidden;height:5px;width:35px;background-color:#000;margin:0 0 4px 0;-webkit-transition:all 0.3s;-moz-transition:all 0.3s;-ms-transition:all 0.3s;-o-transition:all 0.3s;transition:all 0.3s;-webkit-box-shadow:0 0 3px rgba(255,255,255,1);-moz-box-shadow:0 0 3px rgba(255,255,255,1);box-shadow:0 0 3px rgba(255,255,255,1);}
-            a.nav-expander > span.navicon > span.x-three{margin-bottom:0;}
-            a.nav-expander:hover{color:#1fa3ff;-webkit-text-shadow:0 0 3px rgba(255,255,255,0);-moz-text-shadow:0 0 3px rgba(255,255,255,0);-ms-text-shadow:0 0 3px rgba(255,255,255,0);-o-text-shadow:0 0 3px rgba(255,255,255,0);text-shadow:0 0 3px rgba(255,255,255,0);}
-            a.nav-expander:hover > span.navicon > span{background-color:#1fa3ff;-webkit-box-shadow:0 0 0px rgba(255,255,255,0);-moz-box-shadow:0 0 0px rgba(255,255,255,0);box-shadow:0 0 0px rgba(255,255,255,0);}
-            
-@media all and (max-width:1500px) {
-#nav ul > li > a { font-size: 0.9em;}
-}
-            @media all and (max-width:1450px){#nav{height:65px;min-height:65px;}
-                #nav ul > li > a{font-size:0.85em;margin:15px 10px;}
-                #nav #logo figure{width:55px;}
-                #lang{top:14px;}
-                #lang > div, #lang > div a {width:30px; height:30px;}
-                section#welcome {/*padding-top:65px;*/}
-            }
-@media all and (max-width:1350px) {
-#nav ul > li > a { font-size: 0.85em;}
-}
-            @media all and (max-width:1117px){body #nav{font-size:16px;}
-                #nav ul > li > a{margin:20px 10px; font-size: 0.9em;text-shadow: 1px 1px 3px #000;}
-                #nav.bgNav ul > li > a{text-shadow: 0px 0px 0px rgba(0,0,0,0);}
-                #lang{top:17px;}
-                section#welcome {/*padding-top:70px;*/}}
-            @media all and (max-width:980px){#nav ul > li > a{margin:20px 5px;/*font-size:0.85em;*/}}
-            @media all and (max-width:790px){
-                a.nav-expander{right:0;}
-                #nav{top:-12em;}
-                nav#nav{-webkit-transition:top 0.3s;-moz-transition:top 0.3s;-ms-transition:top 0.3s;-o-transition:top 0.3s;transition:top 0.3s;}
-                #nav ul > li > a{margin:0 5px;font-size:0.9em;}
-                #lang {right:initial;right:unset;left:15px;top:20px;font-size: 0.8em;}
-                #lang > div {border-color:rgba(255,255,255,0);}
-                #expandedLogo{display:block;-webkit-opacity:0;-moz-opacity:0;-ms-opacity:0;-o-opacity:0;opacity:0;}}
-            #topSocial{position:absolute;/*top:10px;*/ bottom:10px; right:10px;display:inline;}
-            #topSocial.alwaysOnPage {top:initial; top:unset; bottom:10px; position:fixed; z-index:1;}
-            #topSocial li{display:table-cell;width:25%;}
-            #topSocial.alwaysOnPage li{ width:33%; padding: 0 10px;}
-            #topSocial li a{display:block;height:40px;width:40px;-webkit-border-radius:50%;-moz-border-radius:50%;-o-border-radius:50%;-ms-border-radius:50%;border-radius:50%;border:7px solid transparent;font-size:0;margin:0px;opacity:0.6;filter:alpha(opacity=60);}
-            #topSocial li a{background:url(img/maisha/sprite-social.png) no-repeat transparent;background-size:cover;}
-            #topSocial li a:hover, 
-            #topSocial.alwaysOnPage li a {border-color:rgba(0,0,0,0.1);background-color:rgba(0,0,0,0.2);opacity:1;filter:alpha(opacity=100);}
-            #topSocial.alwaysOnPage li a { margin:0 5px; }
-            #topSocial.alwaysOnPage li a:hover {border-color:rgba(0,0,0,0.3);background-color:rgba(0,0,0,0.5);}
-            #topSocial li a.goteo{background-position:0 -80px;}
-            #topSocial li a.facebook{background-position:0 -40px;}
-            #topSocial li a.linkedin{background-position:0 -120px;}
-            #topSocial li a.blogger{background-position:0 0px;}
-            #topSocial li a.instagram{background-position:0 -160px;}
-            #topSocial li a.youtube{background-position:0 -200px;}
-            .caja{background:#f0f0f0;margin:2em auto;padding:1em 1em 2em;}
-            #donaciones-privadas { margin:4em auto 0;}
-            #donaciones-privadas ul { margin-top:1em;}
-            #donaciones-privadas ul li { list-style:none; margin-top:0.3em;}
-            #donaciones-privadas b { font-weight:200; padding-right:5px; color:#252525;}
-            .address li a{color: white;}
-        </style>
-	</head>
 	
-    <body id="anti-covid-page">
+	<nav class="navbar">
+		<a href="/" class="navbar-brand"><img src="./img/header-4.png" alt="Maisha Roots Logo"></a>
 
-        <div class="marcaWidth"></div>
-        <div class="testigo"></div>
+		<div class="hamburger-icon"><i class="fas fa-bars"></i></div>
 
-        <nav class="navbar">
-            <a href="#header" class="navbar-brand"><img src="./img/header-4.png" alt="Maisha Roots Logo"></a>
-    
-            <div class="hamburger-icon"><i class="fas fa-bars"></i></div>
-    
-            <div class="nav-items-wrapper">
-                <div class="backdrop"></div>
-                <div class="close-btn"><i class="fas fa-times"></i></div>
-                <ul>
-                    <a class="nav-item" href="./index.html">Quiénes somos</a>
-                    <!-- <a class="nav-item" href="./index.html#proyectoActual">Dénde actuamos</a> -->
-                    <a class="nav-item" href="./index.html#campoAccion">Campo de acción</a>
-                    <!-- <a class="nav-item" href="./index.html#paraQuien">Para quién</a> -->
-                    <a class="nav-item" href="./index.html#nuestraExperiencia">Nuestra experiencia</a>
-                    <!-- <a class="nav-item" href="./index.html#concursos">Concursos</a> -->
-                    <a class="nav-item" href="./index.html#colaboraciones">Colaboraciones</a>
-                    <a class="nav-item" href="./index.html#ahoraQue">y ahora qué?</a>
-                    <a class="nav-item" href="./index.html#colabora">Colabora</a>
-                    <a class="nav-item active" href="./covid-project.html">Anti-Covid</a>
-                </ul>
-            </div>
-        </nav>
+		<div class="nav-items-wrapper">
+			<div class="backdrop"></div>
+			<div class="close-btn"><i class="fas fa-times"></i></div>
 
+			<ul class="main-menu">
+				<li class="with-sub"><a class="nav-item active" href="/#about">Quiénes somos</a>
+					<ul class="sub-menu">
+						<li><a class="nav-item" href="/#know-us">Conócenos</a></li>
+						<li><a class="nav-item" href="/#where">Dónde trabajamos</a></li>
+						<li><a class="nav-item" href="/#context">Nuestro contexto</a></li>
+					</ul>
+				</li>
+				
+				<li><a class="nav-item" href="/#timeline">De dónde venimos</a></li>
+				
+				<li class="with-sub"><a class="nav-item" href="/#structure">Cómo trabajamos</a>
+					<ul class="sub-menu">
+						<li><a class="nav-item" href="/#structure">Estructura</a></li>
+						<li><a class="nav-item" href="/#colaborators">Colaboradores/as</a></li>
+					</ul>
+				</li>
 
+				<li class="with-sub"><a class="nav-item" href="/#current-projects">Qué hacemos</a>
+					<ul class="sub-menu">
+						<li><a class="nav-item" href="/#current-projects">Anti-covid</a></li>
+						<li><a class="nav-item" href="/#evaluation">Evaluación</a></li>
+					</ul>
+				</li>
 
-		<section>
-            <h2>Dona al proyecto anti-Covid</h2>
+				<li class="with-sub"><a class="nav-item" href="/#collaborate">Colabora</a>
+					<ul class="sub-menu">
+						<li><a class="nav-item" href="/#collaborate">Voluntariado</a></li>
+						<li><a class="nav-item" href="/#donate">Donaciones</a></li>
+						<li><a class="nav-item" href="/#entities">Entidades</a></li>
+					</ul>
+				</li>
 
-            <p class="esp">Según los expertos, el impacto sanitario, económico y social de la pandemia en países en desarrollo va a ser exponencialmente mayor que en Europa. 
-                La dificultad de acceso a recursos sanitarios, así como el mayor riesgo de mortalidad de la población africana frente a las enfermedades pone a la población tanzana en una situación <span class="highlight">vulnerable</span>.
-            </p>
+				<li class="with-sub"><a class="nav-item" href="/#transparency">Transparencia</a>
+					<ul class="sub-menu">
+						<!-- //! falta -->
+						<!-- <li><a class="nav-item" href="/#struc">Gastos</a></li> -->
+						<li><a class="nav-item" href="/#transparency">Buen Gobierno</a></li>
+						<li><a class="nav-item" href="/#reports">Memorias</a></li>
+					</ul>
+				</li>
 
-            <!-- <p class="eng">According to experts, the health, economic and social impact of the pandemic in developing countries will be exponentially greater than in Europe. The difficulty of access to health resources, as well as the increased mortality risk of the African population associated to diseases makes the Tanzanian population vulnerable</p> -->
-
-            
-            <p class="esp">Maisha Roots ha apostado por la <span class="highlight">prevención</span>.
-                <br> Hemos comenzado una campaña en el barrio de Olasiti, donde ya hemos abastecido a 50 familias con nuestros <span class="highlight">kits anti-Covid</span> que contienen material de limpieza y desinfección, así como cubos con grifo, para facilitar el lavado de manos en las casas sin agua corriente.</p>
-
-            <!-- <p class="eng">Maisha Roots has opted for prevention <br>
-                We have started a campaign in the neighbourhood of Olasiti, where we have already supplied 50 families with our anti-Covid kits containing cleaning and disinfection material, as well as buckets with taps, to facilitate hand washing in houses without tap water.          </p> -->
-
-            <p class="esp highlight">¿Nos ayudas a llegar a más familias?</p>
-            <!-- <p class="esp">Will you help us reach more families?</p> -->
-
-            <p class="esp">Con <span class="highlight">solo 12€</span> podemos comprar un kit anti-covid: </p>
-            <ul class="esp">
-                <li>Cubo con grifo para facilitar el lavado de manos, ya que las familias no tienen agua corriente.</li>
-                <li>Jabón y lejía</li>
-                <li>Folletos informativos</li>
-            </ul>
-
-
-            <div id="error-message"></div>	
-            <div class="donation-opts-wrapper">
-                <button id="checkout-button-price_HL0w1YXrLimiFV" role="link" class="donation-opt">Medio kit</button>
-                <button id="checkout-button-price_HL0vZgL547Epsz" role="link" class="donation-opt">1 kit</button>
-                <button id="checkout-button-price_HL0xau4P17HixM" role="link" class="donation-opt">2 kits</button>
-                <button id="checkout-button-price_HL0yJl7FnzTXe5" role="link" class="donation-opt">3 kits</button>
-            </div>
-
-
-            <div class="accordion-content">
-                <p>
-                    También puedes hacerlo a través de <strong>transferencia bancaria o con un ingreso</strong> en la cuenta:
-                    <ul>
-                        <li>Banco: La CAIXA</li>
-                        <li>Titular: Progress Spain</li>
-                        <li>IBAN: ES55 2100 0955 8002 1028 3299</li>
-                        <li>BIC/SWIFT: CAIXESBBXXX</li>
-                    </ul>
-                    Por favor, para que podamos cumplir con nuestro compromiso con la transparencia, no te olvides de incluir como <strong>concepto: ‘donación anti-covid’ +  nombre completo + DNI</strong>.			
-                </p>
-            </div>
-
-
-            <img src="./img/covid.jpeg" alt="maisha roots team delivering the anti-covid kits">
-
-        </section>
-
-
+				<div class="sub-menu-bg"></div>
+			</ul>
 		
-        <footer id="foot" class="bgNightBlack">
-
-            <div id="links" class="bgPeaceGreen">
-                <div class="container">
-                    <ul class="table">
-                        <li class="left alignLeft">
-                            <ul class="outLinks">
-                                <li class="title"><h3>Links</h3></li>
-                                <!-- VOLUNTARIXS-->
-                                <li><a href="https://voluntariadourjc.wordpress.com/" target="_blank" title="Voluntariado Internacional - URJC">Voluntariado Internacional - URJC</a></li>
-                                <li><a href="http://www.premiosvoluntariado.com/" target="_blank" title="Premios Voluntariado.com">Premios Voluntariado.com</a></li>
-                            </ul>
-                        </li>
-                        <li class="right alignRight">
-
-                            <ul id="social" class="table">
-                                <li class="title"><h3>S&iacute;guenos</h3></li>
-                                <li>
-
-                                    <ul class="table floatRight">
-                                        <li class="tableCell">
-                                            <a class="facebook" href="https://www.facebook.com/maisharoots/?fref=ts" target="_blank" title="Nuestro Facebook - S&iacute;guenos">
-
-                                                Facebook
-                                            </a>
-                                        </li>
-                                        <li class="tableCell">
-                                            <a class="youtube" href="https://www.youtube.com/channel/UCuKDNl0yLjyZppYISnFrtZg" target="_blank" title="youTube">
-
-                                                youtube
-                                            </a>
-                                        </li>
-                                        <li class="tableCell">
-                                            <a class="instagram" href="https://www.instagram.com/maisharoots/" target="_blank" title="Instagram">
-
-                                                instagram
-                                            </a>
-                                        </li>
-                                    </ul>
-
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div id="copy" class="container">
-                <div class="tableCell">
-                    <span>
-                        <script type="text/javascript">
-                            function displayYear() {
-                                var now = new Date();
-                                var year = now.getFullYear();
-                                document.write(year);
-                            };
-                            displayYear();
-                        </script>
-                    </span>
-                    <figure>
-                        <img src="img/maisha/maisharoots_white.png" alt="Maisha Roots" title="Maisha Roots" />
-                    </figure>
-                    <span>Maisha Roots</span>
-                </div>
-            </div>
-
-        </footer>
+		</div>
+	</nav>
 
 
-        <div class="overlay">
-            <a href="#" class="close icon">X</a>
-            <div class="video-container"></div>
+    <section>
+        <h2>Dona al proyecto anti-Covid</h2>
+
+        <p>Según los expertos, el impacto sanitario, económico y social de la pandemia en países en desarrollo va a ser exponencialmente mayor que en Europa. 
+            La dificultad de acceso a recursos sanitarios, así como el mayor riesgo de mortalidad de la población africana frente a las enfermedades pone a la población tanzana en una situación <span class="highlight">vulnerable</span>.
+        </p>
+
+        
+        <p>Maisha Roots ha apostado por la <span class="highlight">prevención</span>.
+            <br> Hemos comenzado una campaña en el barrio de Olasiti, donde ya hemos abastecido a 50 familias con nuestros <span class="highlight">kits anti-Covid</span> que contienen material de limpieza y desinfección, así como cubos con grifo, para facilitar el lavado de manos en las casas sin agua corriente.</p>
+
+
+        <p class="esp highlight">¿Nos ayudas a llegar a más familias?</p>
+
+        <p>Con <span class="highlight">solo 12€</span> podemos comprar un kit anti-covid: </p>
+        <ul>
+            <li>Cubo con grifo para facilitar el lavado de manos, ya que las familias no tienen agua corriente.</li>
+            <li>Jabón y lejía</li>
+            <li>Folletos informativos</li>
+        </ul>
+
+
+        <div id="error-message"></div>	
+        <div class="donation-opts-wrapper">
+            <button id="checkout-button-price_HL0w1YXrLimiFV" role="link" class="donation-opt">Medio kit</button>
+            <button id="checkout-button-price_HL0vZgL547Epsz" role="link" class="donation-opt">1 kit</button>
+            <button id="checkout-button-price_HL0xau4P17HixM" role="link" class="donation-opt">2 kits</button>
+            <button id="checkout-button-price_HL0yJl7FnzTXe5" role="link" class="donation-opt">3 kits</button>
         </div>
 
-        <!-- Load Stripe.js -->
-        <script src="https://js.stripe.com/v3"></script>
-        <script src="./js/payments.js"></script>
 
-        <script src="./js/responsive_navbar.js"></script>
+        <div class="bank-donation">
+            <p>
+                También puedes hacerlo a través de <strong>transferencia bancaria o con un ingreso</strong> en la cuenta:
+                <ul>
+                    <li>Banco: La CAIXA</li>
+                    <li>Titular: Progress Spain</li>
+                    <li>IBAN: ES55 2100 0955 8002 1028 3299</li>
+                    <li>BIC/SWIFT: CAIXESBBXXX</li>
+                </ul>
+                Por favor, para que podamos cumplir con nuestro compromiso con la transparencia, no te olvides de incluir como <strong>concepto: ‘donación anti-covid’ +  nombre completo + DNI</strong>.			
+            </p>
+        </div>
 
-    </body>
+        <img src="./img/covid.jpeg" alt="maisha roots team delivering the anti-covid kits">
+
+    </section>
+
+
+    
+    <footer>
+		<div class="footer-content">
+			<div class="list-sections">
+				<a href="/#about">Quiénes somos</a>
+				<div class="divider"></div>
+				<a href="/#donate">Dona</a>
+				<div class="divider"></div>
+				<a href="/#collaborate">Hazte voluntaria/o</a>
+			</div>
+
+			<div class="newsletter newsletter-footer">
+				<p>Subscribete a nuestra newsletter y no te pierdas ninguna novedad!</p>
+<form action="https://maisharoots.us18.list-manage.com/subscribe/post?u=623c22dea8f25d5207f3771d0&amp;id=f1a4a17e61" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+					<input placeholder="introduce tu email..." type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+					<button><i class="fas fa-chevron-down"><input type="submit" name="subscribe" value=""></i></button>
+		
+					<div id="mce-responses" class="clear">
+						<div class="response" id="mce-error-response" style="display:none"></div>
+						<div class="response" id="mce-success-response" style="display:none"></div>
+					</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+				</form>
+			</div>
+	
+			<div class="contact-links">
+				<p class="footer-title">Síguenos</p>
+				<div class="sm-links sm-links-footer">
+					<a href="https://www.facebook.com/maisharoots/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+					<a href="https://www.instagram.com/maisharoots/" target="_blank"><i class="fab fa-instagram"></i></a>
+					<a href="https://www.youtube.com/channel/UCuKDNl0yLjyZppYISnFrtZg" target="_blank"><i class="fab fa-youtube"></i></a>
+				</div>
+				<p><a href="mailto:info@maisharoots.org" target="_blank">info@maisharoots.org</a></p>
+			</div>
+			
+			<div class="lang-change">
+				<p class="footer-title">Languages</p>
+				<p><a href="/covid-project" class="">ESP</a> | <a href="/en-covid-project" class="">ENG</a></p>
+			</div>
+		</div>
+	</footer>
+
+
+    <!-- Load Stripe.js -->
+    <script src="https://js.stripe.com/v3"></script>
+    <script src="./js/payments.js"></script>
+
+    <script src="./js/responsive_navbar.js"></script>
+
+</body>
 </html>

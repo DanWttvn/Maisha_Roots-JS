@@ -2,19 +2,19 @@
 /* Navbar appear on Scroll */
 $(function() {
 	$(".navbar").hide();
-	// $(".newsletter-popup").hide();
+	$(".newsletter-popup").hide();
 	
     $(document).ready(function(){                    
         $(window).scroll(function(){                     
             if ($(this).scrollTop() > $(".header-section").height() - 300) {
 				$('.navbar').fadeIn(400);
-				// const userClosed = newsletter.classList.contains("closed");
-				// if(!userClosed) {
-				// 	$(".newsletter-popup").fadeIn(400);
-				// }
+				const userClosed = newsletter.classList.contains("closed");
+				if(!userClosed) {
+					$(".newsletter-popup").fadeIn(400);
+				}
             } else {
 				$('.navbar').fadeOut(400);
-				// $(".newsletter-popup").fadeOut(400);
+				$(".newsletter-popup").fadeOut(400);
             }
         });
 	});
@@ -40,15 +40,15 @@ const scrollHeader = new SmoothScroll('.scroll-icon a[href*="#"]', {
 	speed: 800
 });
 
-//! ACTIVAR
+// ACTIVAR
 /* <---------- Newsletter ----------> */
-// const newsletter = document.querySelector(".newsletter-popup");
-// const closeNewsLetter = document.querySelector(".newsletter-popup i.fa-times")
+const newsletter = document.querySelector(".newsletter-popup");
+const closeNewsLetter = document.querySelector(".newsletter-popup i.fa-times")
 
-// closeNewsLetter.addEventListener("click", () => {
-// 	newsletter.style.display = "none"
-// 	newsletter.classList.add("closed")
-// })
+closeNewsLetter.addEventListener("click", () => {
+	newsletter.style.display = "none"
+	newsletter.classList.add("closed")
+})
 
 
 /* <---------- Navbar ----------> */
@@ -90,13 +90,11 @@ const navItems = document.querySelectorAll(".nav-item");
 navItems.forEach(item => {
 	item.addEventListener("click", e => {
 		e.preventDefault();
-		window.removeEventListener("scroll", activeClassOnScroll)
 		linksWrapper.classList.remove("open") // responsive navb
 		handleIndicator(e.target)
 	});
 })
 
-//! change to active only the main li. select parent
 function handleIndicator(el) {
 	navItems.forEach(item => {
 		item.classList.remove("active")

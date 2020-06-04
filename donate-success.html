@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<title>Maisha Roots</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans&family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
 	<link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="img/favicons/favicon.ico" type="image/x-icon">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -14,41 +14,88 @@
 </head>
 <body>
 
+		
 	<nav class="navbar">
-		<div class="navbar-brand"><img src="./img/header-4.png" alt="Maisha Roots Logo"></div>
+		<a href="/" class="navbar-brand"><img src="./img/header-4.png" alt="Maisha Roots Logo"></a>
 
 		<div class="hamburger-icon"><i class="fas fa-bars"></i></div>
 
 		<div class="nav-items-wrapper">
 			<div class="backdrop"></div>
 			<div class="close-btn"><i class="fas fa-times"></i></div>
-			<ul>
-				<a class="nav-item" href="#about">Conócenos</a>
-				<a class="nav-item" href="#structure">Estructura</a>
-				<a class="nav-item" href="#transparency">Transparencia</a>
-				<a class="nav-item" href="#current-projects">Proyectos Actuales</a>
-				<a class="nav-item" href="#collaborate">Colabora</a>
+
+			<ul class="main-menu">
+				<li class="with-sub"><a class="nav-item active" href="/#about">Quiénes somos</a>
+					<ul class="sub-menu">
+						<li><a class="nav-item" href="/#know-us">Conócenos</a></li>
+						<li><a class="nav-item" href="/#where">Dónde trabajamos</a></li>
+						<li><a class="nav-item" href="/#context">Nuestro contexto</a></li>
+					</ul>
+				</li>
+				
+				<li><a class="nav-item" href="/#timeline">De dónde venimos</a></li>
+				
+				<li class="with-sub"><a class="nav-item" href="/#structure">Cómo trabajamos</a>
+					<ul class="sub-menu">
+						<li><a class="nav-item" href="/#structure">Estructura</a></li>
+						<li><a class="nav-item" href="/#colaborators">Colaboradores/as</a></li>
+					</ul>
+				</li>
+
+				<li class="with-sub"><a class="nav-item" href="/#current-projects">Qué hacemos</a>
+					<ul class="sub-menu">
+						<li><a class="nav-item" href="/#current-projects">Anti-covid</a></li>
+						<li><a class="nav-item" href="/#evaluation">Evaluación</a></li>
+					</ul>
+				</li>
+
+				<li class="with-sub"><a class="nav-item" href="/#collaborate">Colabora</a>
+					<ul class="sub-menu">
+						<li><a class="nav-item" href="/#collaborate">Voluntariado</a></li>
+						<li><a class="nav-item" href="/#donate">Donaciones</a></li>
+						<li><a class="nav-item" href="/#entities">Entidades</a></li>
+					</ul>
+				</li>
+
+				<li class="with-sub"><a class="nav-item" href="/#transparency">Transparencia</a>
+					<ul class="sub-menu">
+						<!-- //! falta -->
+						<!-- <li><a class="nav-item" href="/#struc">Gastos</a></li> -->
+						<li><a class="nav-item" href="/#transparency">Buen Gobierno</a></li>
+						<li><a class="nav-item" href="/#reports">Memorias</a></li>
+					</ul>
+				</li>
+
+				<div class="sub-menu-bg"></div>
 			</ul>
+		
 		</div>
 	</nav>
+
+
 	
 	<h3 class="success-msg">Gracias por tu aportación !</h3>
 
 	<footer>
 		<div class="footer-content">
 			<div class="list-sections">
-				<a href="#about">Conócenos</a>
+				<a href="/#about">Quiénes somos</a>
 				<div class="divider"></div>
-				<a href="#collaborate">Dona</a>
+				<a href="/#donate">Dona</a>
 				<div class="divider"></div>
-				<a href="#collaborate">Hazte voluntaria/o</a>
+				<a href="/#collaborate">Hazte voluntaria/o</a>
 			</div>
 
 			<div class="newsletter newsletter-footer">
 				<p>Subscribete a nuestra newsletter y no te pierdas ninguna novedad!</p>
-				<form action="https://formspree.io/mvowgqrz" method="POST">
-					<input placeholder="introduce tu email..." type="email" name="_replyto">
-					<button><i class="fas fa-chevron-down"><input type="submit" value=""></i></button>
+<form action="https://maisharoots.us18.list-manage.com/subscribe/post?u=623c22dea8f25d5207f3771d0&amp;id=f1a4a17e61" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+					<input placeholder="introduce tu email..." type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+					<button><i class="fas fa-chevron-down"><input type="submit" name="subscribe" value=""></i></button>
+		
+					<div id="mce-responses" class="clear">
+						<div class="response" id="mce-error-response" style="display:none"></div>
+						<div class="response" id="mce-success-response" style="display:none"></div>
+					</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 				</form>
 			</div>
 	
@@ -60,6 +107,10 @@
 					<a href="https://www.youtube.com/channel/UCuKDNl0yLjyZppYISnFrtZg" target="_blank"><i class="fab fa-youtube"></i></a>
 				</div>
 				<p><a href="mailto:info@maisharoots.org" target="_blank">info@maisharoots.org</a></p>
+			</div>
+<div class="lang-change">
+				<p class="footer-title">Languages</p>
+				<p><a href="/" class="">ESP</a> | <a href="/en" class="">ENG</a></p>
 			</div>
 		</div>
 	</footer>

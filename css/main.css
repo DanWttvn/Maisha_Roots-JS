@@ -2165,6 +2165,153 @@ button.donation-opt:active {
 }
 
 
+
+/* <---------- Anti-covid page ----------> */
+
+
+#anti-covid-page section {
+	padding: 80px 100px;
+	width: 100vw;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+
+#anti-covid-page h2 {
+	font-weight: 900;
+	font-size: 3.2em;
+	color: var(--dark-red);
+	margin-top: 40px;
+	text-transform: none;
+	letter-spacing: initial;
+	width: 100%;
+	display: block;
+}
+
+#anti-covid-page section p {
+	font-weight: 500;
+	line-height: 1.8rem;
+}
+
+#anti-covid-page section > ul {
+	width: 100%;
+	padding-left: 60px;
+}
+
+#anti-covid-page section li {
+	font-weight: 500;
+	margin-top: 7px;
+}
+
+#anti-covid-page .donation-opts-wrapper {
+	margin: 20px auto;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+#anti-covid-page .highlight {
+	color: var(--dark-red);
+	font-size: 1.6rem;
+	font-weight: 900;
+	font-style: italic;
+}
+
+#anti-covid-page button.donation-opt {
+	padding: 15px 20px;
+	font-size: 1.5rem;
+	font-weight: 700;
+	border-radius: 5px;
+	margin: 10px 10px;
+	background: var(--dark-red);
+	color: var(--off-orange);
+	transition: all 0.2s ease-in-out;
+}
+
+#anti-covid-page button.donation-opt:hover {
+	background: var(--bright-red);
+}
+
+#anti-covid-page button.donation-opt:active {
+	background: var(--bright-red);
+}
+
+#anti-covid-page .success-msg {
+	/* font-family: 'Montserrat', sans-serif !important; */
+	font-weight: 700;
+	margin-top: 150px;
+	padding: 0 50px;
+	text-align: center;
+	color: var(--dark-red);
+	font-weight: 800;
+	font-size: 3rem;
+	font-style: italic;
+}
+
+
+#anti-covid-page section img {
+	width: 100%;
+	-o-object-fit: cover;
+	   object-fit: cover;
+	-o-object-position: center;
+	   object-position: center;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	max-height: 400px;
+}
+
+
+.bank-donation {
+	width: 100%;
+	max-width: 500px;
+	margin: 60px auto;
+}
+
+.bank-donation ul {
+	background: var(--dark-red);
+	color: var(--off-orange);
+	/* background: rgba(0,0,0,0.3); */
+	/* color: var(--dark-red); */
+	margin: 0 auto;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	margin-bottom: 20px;
+	padding: 30px 50px;
+	border-radius: 30px;
+}
+
+
+@media (max-width:790px) {
+    #anti-covid-page section {
+		padding: 80px 20px 40px;
+	}
+
+	#anti-covid-page section > ul {
+		padding-left: 30px;
+	}
+
+	#anti-covid-page button.donation-opt {
+		font-size: 1.2rem;
+	}
+
+	
+	#anti-covid-page section img {
+		height: 200px;
+	}
+
+	.bank-donation {
+		margin: 30px auto;
+	}
+
+	#anti-covid-page .success-msg {
+		font-family: 'Montserrat', sans-serif !important;
+		font-size: 2rem;
+	}
+}
+
+
+
 /* <---------- Footer Section ----------> */
 
 footer {
@@ -2211,6 +2358,17 @@ footer a:hover {
 	justify-content: space-between;
 }
 
+.lang-change {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: flex-start;
+}
+
+.lang-change p {
+	/* margin: 0 auto; */
+	text-align: center;
+}
+
 .list-sections a {
 	padding: 15px 10px;
 }
@@ -2222,7 +2380,8 @@ footer a:hover {
 	opacity: 0.5;
 }
 
-.contact-links {
+.contact-links,
+.lang-change {
 	padding: 15px 10px;
 }
 
