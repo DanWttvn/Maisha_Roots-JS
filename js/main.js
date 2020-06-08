@@ -3,14 +3,21 @@
 $(function() {
 	$(".navbar").hide();
 	$(".newsletter-popup").hide();
+	$(".policy-popup").hide();
 	
     $(document).ready(function(){                    
         $(window).scroll(function(){                     
             if ($(this).scrollTop() > $(".header-section").height() - 300) {
 				$('.navbar').fadeIn(400);
-				const userClosed = newsletter.classList.contains("closed");
-				if(!userClosed) {
+				const newsletterClosed = newsletterPopup.classList.contains("closed");
+				if(!newsletterClosed) {
 					$(".newsletter-popup").fadeIn(400);
+				}
+				const policyAccepted = policyPopup.classList.contains("accepted")
+				console.log(policyAccepted);
+				
+				if(!policyAccepted) {
+					$(".policy-popup").fadeIn(400);
 				}
             } else {
 				$('.navbar').fadeOut(400);
@@ -41,20 +48,29 @@ const scrollHeader = new SmoothScroll('.scroll-icon a[href*="#"]', {
 });
 
 // ACTIVAR
-/* <---------- Newsletter ----------> */
-const newsletter = document.querySelector(".newsletter-popup");
-const closeNewsLetter = document.querySelector(".newsletter-popup i.fa-times")
+/* <---------- Close Popups ----------> */
+const newsletterPopup = document.querySelector(".newsletter-popup");
+const closeNewsletter = document.querySelector(".newsletter-popup i.fa-times")
 
-closeNewsLetter.addEventListener("click", () => {
-	newsletter.style.display = "none"
-	newsletter.classList.add("closed")
+closeNewsletter.addEventListener("click", () => {
+	newsletterPopup.style.display = "none"
+	newsletterPopup.classList.add("closed")
 })
+
+const policyPopup = document.querySelector(".policy-popup");
+const acceptPolicy = document.querySelector(".policy-popup button")
+
+acceptPolicy.addEventListener("click", () => {
+	policyPopup.style.display = "none"
+	policyPopup.classList.add("accepted")
+})
+
 
 
 /* <---------- Navbar ----------> */
 
 /* Change Active on Scroll */ 
-const sectionsArray = document.querySelectorAll("section");
+const sectionsArray = document.querySelectorAll("body > section");
 const headerSection = document.querySelector(".header-section");
 
 const headerWidth = parseFloat(getComputedStyle(headerSection).width, 10);
@@ -232,4 +248,5 @@ accordionBtns.forEach(accBtn => {
 		}
 	})
 })
+
 
