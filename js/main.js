@@ -4,21 +4,16 @@ $(function() {
 	$(".navbar").hide();
 	$(".newsletter-popup").hide();
 	$(".policy-popup").hide();
+	// HACER QUE APAREZCA NEWSLETTER X TIEMPO DESPUES DE QUITAR COOKIES
 	
     $(document).ready(function(){                    
         $(window).scroll(function(){                     
             if ($(this).scrollTop() > $(".header-section").height() - 300) {
 				$('.navbar').fadeIn(400);
 				const newsletterClosed = newsletterPopup.classList.contains("closed");
-				if(!newsletterClosed) {
-					$(".newsletter-popup").fadeIn(400);
-				}
+				if(!newsletterClosed) $(".newsletter-popup").fadeIn(400);
 				const policyAccepted = policyPopup.classList.contains("accepted")
-				console.log(policyAccepted);
-				
-				if(!policyAccepted) {
-					$(".policy-popup").fadeIn(400);
-				}
+				if(!policyAccepted) $(".policy-popup").fadeIn(400);
             } else {
 				$('.navbar').fadeOut(400);
 				$(".newsletter-popup").fadeOut(400);
