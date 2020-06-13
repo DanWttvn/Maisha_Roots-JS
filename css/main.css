@@ -258,8 +258,6 @@ button:active {
 
 
 .navbar {
-	display: none;
-
 	width: 100%;
 	height: 90px;
 	position: fixed;
@@ -585,7 +583,7 @@ h2 .title-wrapper:after {
 
 .visible h2 .title-wrapper:after {
 	content: attr(data-text);
-	width: 100%;
+	width: fit-content;
 }
 
 .title-wrapper:first-of-type::after {
@@ -639,6 +637,7 @@ h2 .title-wrapper:after {
 /* <---------- Policy pop-up ----------> */
 
 .policy-popup {
+	/* display: none; */
 	z-index: 20;
 	position: fixed;
 	width: 100%;
@@ -665,6 +664,7 @@ h2 .title-wrapper:after {
 /* <---------- Newsletter pop-up ----------> */
 
 .newsletter-popup {
+	/* display: none; */
 	z-index: 20;
 	position: fixed;
 	/* width: fit-content; */
@@ -676,7 +676,7 @@ h2 .title-wrapper:after {
 	font-weight: 300;
 	font-size: 0.95rem;
 	border-radius: 5px;
-	bottom: 80px;
+	bottom: 30px;
 	right: 30px; 
 	box-shadow: -1px 5px 14px 1px rgba(0,0,0,0.2);
 }
@@ -1708,6 +1708,7 @@ aside.sm-links i:hover {
 .quote {
 	position: relative;
 	margin: 0 auto;
+	padding: 0 10px;
 	width: 82%;
 
 	font-size: 3.8rem;
@@ -1796,7 +1797,7 @@ aside.sm-links i:hover {
 /* <---------- Complain Section ----------> */ 
 
 #complain-page h3 {
-	padding: 20px 10% 0;
+	padding: 45px 10% 0;
 }
 
 .form-box {
@@ -2097,7 +2098,7 @@ a.link:hover {
 	transition: max-height 0.4s ease-out;
 }
 
-.accordion-content ul {
+.accordion-content ul.bank-box {
 	background: var(--dark-red);
 	color: var(--off-orange);
 	/* background: rgba(0,0,0,0.3); */
@@ -2205,11 +2206,12 @@ button.donation-opt:active {
 	width: 5px;
 }
 
-#policy-modal { font-size: 15px; }
+#policy-modal { 
+	font-size: 15px; 
+}
 
 #policy-modal h4 { padding-left: 20px; }
 
-#policy-modal p { margin-top: 0.6rem; }
 
 #policy-modal article { display: none; }
 
@@ -2217,6 +2219,28 @@ button.donation-opt:active {
 	display: block;
 	padding-top: 0;
 	margin-top: 20px;
+}
+
+#policy-modal article > p { 
+	margin-top: 0.6rem;
+	padding-left: 20px;
+}
+
+#policy-modal p i,
+#policy-modal ol i,
+#policy-modal ul i { 
+	font: inherit;
+	font-style: italic;
+}
+
+#policy-modal article ul,
+#policy-modal article ol { 
+	padding-left: 20px;
+}
+
+#policy-modal li span { 
+	font-weight: 500;
+	color: #000;
 }
 
 #policy-modal .accordion-wrapper { width: 100%; }
@@ -2238,7 +2262,6 @@ button.donation-opt:active {
 
 .toggle-info button:hover { color: #222; }
 
-
 .toggle-info button.active {
 	color: #000;
 	border-bottom: 2px solid #000;
@@ -2249,23 +2272,11 @@ button.donation-opt:active {
 
 /* <---------- Anti-covid page ----------> */
 
-
 #anti-covid-page section {
-	padding: 80px 100px;
+	padding: 145px 100px;
 	width: 100vw;
 	box-sizing: border-box;
 	font-size: 16px;
-}
-
-#anti-covid-page h2 {
-	font-weight: 900;
-	font-size: 3.2em;
-	color: var(--dark-red);
-	margin-top: 40px;
-	text-transform: none;
-	letter-spacing: initial;
-	width: 100%;
-	display: block;
 }
 
 #anti-covid-page section p {
@@ -2365,7 +2376,7 @@ button.donation-opt:active {
 
 @media (max-width:790px) {
     #anti-covid-page section {
-		padding: 80px 20px 40px;
+		padding: 145px 20px 40px;
 	}
 
 	#anti-covid-page section > ul {

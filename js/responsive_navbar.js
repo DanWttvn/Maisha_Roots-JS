@@ -39,3 +39,29 @@ infoBtns.forEach(infoBtn => {
 		policySections.forEach(section => section.classList.toggle("active"))
 	})
 })
+
+
+/* <---------- Accordion ----------> */
+const accordionBtns = document.querySelectorAll(".accordion-btn");
+
+// First donate option open by default
+if(document.querySelector(".accordion-btn.open + .accordion-content")) {
+	const firstAccContent = document.querySelector(".accordion-btn.open + .accordion-content");
+	firstAccContent.style.maxHeight = firstAccContent.scrollHeight + "px"
+}
+
+
+accordionBtns.forEach(accBtn => {
+	accBtn.addEventListener("click", function() {
+		// accordionBtns.forEach(accBtn => accBtn.classList.remove("open")) se me borra en todos, asi que no vale
+
+		accBtn.classList.toggle("open");
+		
+		const content = accBtn.nextElementSibling;
+		if(content.style.maxHeight) {
+			content.style.maxHeight = null;
+		} else {
+			content.style.maxHeight = content.scrollHeight + "px"
+		}
+	})
+})

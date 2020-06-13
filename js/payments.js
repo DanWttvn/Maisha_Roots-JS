@@ -17,8 +17,8 @@
 			// Instead use one of the strategies described in
 			// https://stripe.com/docs/payments/checkout/fulfillment
 			//* CHANGE BEFORE DEPLOY *//
-			successUrl: 'http://localhost:5500/donate-success.html',
-			cancelUrl: 'http://localhost:5500/index.html#collaborate.html'
+			successUrl: window.location.protocol + '//www.maisharoots.org/donate-success',
+			cancelUrl: window.location.protocol + '//www.maisharoots.org/#collaborate'
 			// successUrl: window.location.protocol + '//www.maisharoots.org/success',
 			// cancelUrl: window.location.protocol + '//www.maisharoots.org/canceled',
 		  })
@@ -37,8 +37,8 @@
 		stripe.redirectToCheckout({
 			lineItems: [{price: 'sku_HHFyT6kLZuD23W', quantity: 1}],
 			mode: 'payment',
-			successUrl: 'http://localhost:5500/donate-success.html',
-			cancelUrl: 'http://localhost:5500/index.html#collaborate.html'
+			successUrl: window.location.protocol + '//www.maisharoots.org/donate-success',
+			cancelUrl: window.location.protocol + '//www.maisharoots.org/#collaborate'
 		  })
 		.then(function (result) {
 			if (result.error) {
@@ -53,8 +53,8 @@
 		stripe.redirectToCheckout({
 			lineItems: [{price: 'sku_HHG06oLOQX1D3J', quantity: 1}],
 			mode: 'payment',
-			successUrl: 'http://localhost:5500/donate-success.html',
-			cancelUrl: 'http://localhost:5500/index.html#collaborate.html'
+			successUrl: window.location.protocol + '//www.maisharoots.org/donate-success',
+			cancelUrl: window.location.protocol + '//www.maisharoots.org/#collaborate'
 		  })
 		.then(function (result) {
 			if (result.error) {
@@ -69,8 +69,8 @@
 		stripe.redirectToCheckout({
 			lineItems: [{price: 'sku_HHG1NxSlHU1gKE', quantity: 1}],
 			mode: 'payment',
-			successUrl: 'http://localhost:5500/donate-success.html',
-			cancelUrl: 'http://localhost:5500/index.html#collaborate.html'
+			successUrl: window.location.protocol + '//www.maisharoots.org/donate-success',
+			cancelUrl: window.location.protocol + '//www.maisharoots.org/#collaborate'
 		  })
 		.then(function (result) {
 			if (result.error) {
@@ -85,8 +85,8 @@
 		stripe.redirectToCheckout({
 			lineItems: [{price: 'sku_HHG16e540MAIDR', quantity: 1}],
 			mode: 'payment',
-			successUrl: 'http://localhost:5500/donate-success.html',
-			cancelUrl: 'http://localhost:5500/index.html#collaborate.html'
+			successUrl: window.location.protocol + '//www.maisharoots.org/donate-success',
+			cancelUrl: window.location.protocol + '//www.maisharoots.org/#collaborate'
 		  })
 		.then(function (result) {
 			if (result.error) {
@@ -101,8 +101,8 @@
 		stripe.redirectToCheckout({
 			lineItems: [{price: 'sku_HHG21yPmyQ1Wcz', quantity: 1}],
 			mode: 'payment',
-			successUrl: 'http://localhost:5500/donate-success.html',
-			cancelUrl: 'http://localhost:5500/index.html#collaborate.html'
+			successUrl: window.location.protocol + '//www.maisharoots.org/donate-success',
+			cancelUrl: window.location.protocol + '//www.maisharoots.org/#collaborate'
 		  })
 		.then(function (result) {
 			if (result.error) {
@@ -118,8 +118,8 @@
 		stripe.redirectToCheckout({
 			lineItems: [{price: 'plan_HHGFGxozSIFia4', quantity: 1}],
 			mode: 'subscription',
-			successUrl: 'http://localhost:5500/donate-success.html',
-			cancelUrl: 'http://localhost:5500/index.html#collaborate.html'
+			successUrl: window.location.protocol + '//www.maisharoots.org/donate-success',
+			cancelUrl: window.location.protocol + '//www.maisharoots.org/#collaborate'
 		  })
 		.then(function (result) {
 			if (result.error) {
@@ -134,8 +134,8 @@
 		stripe.redirectToCheckout({
 			lineItems: [{price: 'plan_HHGG8x4hRFelM7', quantity: 1}],
 			mode: 'subscription',
-			successUrl: 'http://localhost:5500/donate-success.html',
-			cancelUrl: 'http://localhost:5500/index.html#collaborate.html'
+			successUrl: window.location.protocol + '//www.maisharoots.org/donate-success',
+			cancelUrl: window.location.protocol + '//www.maisharoots.org/#collaborate'
 		  })
 		.then(function (result) {
 			if (result.error) {
@@ -150,8 +150,8 @@
 		stripe.redirectToCheckout({
 			lineItems: [{price: 'plan_HHGHxTGHDhfAUr', quantity: 1}],
 			mode: 'subscription',
-			successUrl: 'http://localhost:5500/donate-success.html',
-			cancelUrl: 'http://localhost:5500/index.html#collaborate.html'
+			successUrl: window.location.protocol + '//www.maisharoots.org/donate-success',
+			cancelUrl: window.location.protocol + '//www.maisharoots.org/#collaborate'
 		  })
 		.then(function (result) {
 			if (result.error) {
@@ -166,8 +166,8 @@
 		stripe.redirectToCheckout({
 			lineItems: [{price: 'plan_HHGIpo9BeQWYwA', quantity: 1}],
 			mode: 'subscription',
-			successUrl: 'http://localhost:5500/donate-success.html',
-			cancelUrl: 'http://localhost:5500/index.html#collaborate.html'
+			successUrl: window.location.protocol + '//www.maisharoots.org/donate-success',
+			cancelUrl: window.location.protocol + '//www.maisharoots.org/#collaborate'
 		  })
 		.then(function (result) {
 			if (result.error) {
@@ -182,8 +182,8 @@
 		stripe.redirectToCheckout({
 			lineItems: [{price: 'plan_HHGIiM6dW2JsEU', quantity: 1}],
 			mode: 'subscription',
-			successUrl: 'http://localhost:5500/donate-success.html',
-			cancelUrl: 'http://localhost:5500/index.html#collaborate.html'
+			successUrl: window.location.protocol + '//www.maisharoots.org/donate-success',
+			cancelUrl: window.location.protocol + '//www.maisharoots.org/#collaborate'
 		  })
 		.then(function (result) {
 			if (result.error) {
@@ -198,8 +198,8 @@
 		stripe.redirectToCheckout({
 			lineItems: [{price: 'plan_HHGIl0261Y9EK0', quantity: 1}],
 			mode: 'subscription',
-			successUrl: 'http://localhost:5500/donate-success.html',
-			cancelUrl: 'http://localhost:5500/index.html#collaborate.html'
+			successUrl: window.location.protocol + '//www.maisharoots.org/donate-success',
+			cancelUrl: window.location.protocol + '//www.maisharoots.org/#collaborate'
 		  })
 		.then(function (result) {
 			if (result.error) {
@@ -214,8 +214,8 @@
 		stripe.redirectToCheckout({
 			lineItems: [{price: 'plan_HHGJ59foEBYEbN', quantity: 1}],
 			mode: 'subscription',
-			successUrl: 'http://localhost:5500/donate-success.html',
-			cancelUrl: 'http://localhost:5500/index.html#collaborate.html'
+			successUrl: window.location.protocol + '//www.maisharoots.org/donate-success',
+			cancelUrl: window.location.protocol + '//www.maisharoots.org/#collaborate'
 		  })
 		.then(function (result) {
 			if (result.error) {

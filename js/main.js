@@ -1,25 +1,65 @@
 
-/* Navbar appear on Scroll */
+/* Navbar adn popups appear on Scroll */
 $(function() {
 	$(".navbar").hide();
 	$(".newsletter-popup").hide();
 	$(".policy-popup").hide();
-	// HACER QUE APAREZCA NEWSLETTER X TIEMPO DESPUES DE QUITAR COOKIES
 	
     $(document).ready(function(){                    
         $(window).scroll(function(){                     
             if ($(this).scrollTop() > $(".header-section").height() - 300) {
 				$('.navbar').fadeIn(400);
-				const newsletterClosed = newsletterPopup.classList.contains("closed");
-				if(!newsletterClosed) $(".newsletter-popup").fadeIn(400);
-				const policyAccepted = policyPopup.classList.contains("accepted")
+
+				const policyAccepted = checkCookie();
 				if(!policyAccepted) $(".policy-popup").fadeIn(400);
+
+				const newsletterClosed = newsletterPopup.classList.contains("closed");
+				if(policyAccepted && !newsletterClosed) {
+					setTimeout(function(){$(".newsletter-popup").fadeIn(400)}, 3000)
+				}
             } else {
 				$('.navbar').fadeOut(400);
 				$(".newsletter-popup").fadeOut(400);
             }
         });
 	});
+})
+
+/* <---------- Accept cookies ----------> */
+// when the cookies are accepted, a  new cookie is stored with the value of true. When the page loades, it will check it so the message doesnt show again
+function setCookie(cname, cvalue, exdays) {
+	var d = new Date();
+	d.setTime(d.getTime() + (exdays*24*60*60*1000));
+	var expires = "expires="+ d.toUTCString();
+	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function checkCookie() {
+	var cookies = document.cookie
+						.split(";")
+						.map(cookie => cookie.split("="))
+						.reduce((acc, [key, value]) => ({
+							...acc, [key.trim()]: decodeURIComponent(value)
+						}))
+	if(cookies.policy_accepted) return true;
+}
+
+
+/* <---------- Close Popups ----------> */
+const newsletterPopup = document.querySelector(".newsletter-popup");
+const closeNewsletter = document.querySelector(".newsletter-popup i.fa-times")
+
+closeNewsletter.addEventListener("click", () => {
+	newsletterPopup.style.display = "none"
+	newsletterPopup.classList.add("closed")
+})
+
+const policyPopup = document.querySelector(".policy-popup");
+const acceptPolicy = document.querySelector(".policy-popup button")
+
+acceptPolicy.addEventListener("click", () => {
+	policyPopup.style.display = "none"
+	setCookie("policy_accepted", "true", 15)
 })
 
 
@@ -41,25 +81,6 @@ setTimeout(() => {
 const scrollHeader = new SmoothScroll('.scroll-icon a[href*="#"]', {
 	speed: 800
 });
-
-// ACTIVAR
-/* <---------- Close Popups ----------> */
-const newsletterPopup = document.querySelector(".newsletter-popup");
-const closeNewsletter = document.querySelector(".newsletter-popup i.fa-times")
-
-closeNewsletter.addEventListener("click", () => {
-	newsletterPopup.style.display = "none"
-	newsletterPopup.classList.add("closed")
-})
-
-const policyPopup = document.querySelector(".policy-popup");
-const acceptPolicy = document.querySelector(".policy-popup button")
-
-acceptPolicy.addEventListener("click", () => {
-	policyPopup.style.display = "none"
-	policyPopup.classList.add("accepted")
-})
-
 
 
 /* <---------- Navbar ----------> */
@@ -147,7 +168,6 @@ controlNext.addEventListener("click", () => switchEvent("next"))
 arrangeNodes();
 
 function arrangeNodes() {
-	
 	for (let i = 0; i < timelineTitles.length; i++) {
 		let node = document.createElement("div");
 		node.classList.add("timeline-node")
@@ -219,29 +239,3 @@ function closeCard() {
 	cardSp.style.display = "none";
 	cardTz.style.display = "none";
 }
-
-
-
-/* <---------- Accordion ----------> */
-const accordionBtns = document.querySelectorAll(".accordion-btn");
-
-// First open by default
-const firstAccContent = document.querySelector(".accordion-btn.open + .accordion-content");
-firstAccContent.style.maxHeight = firstAccContent.scrollHeight + "px"
-
-accordionBtns.forEach(accBtn => {
-	accBtn.addEventListener("click", function() {
-		// accordionBtns.forEach(accBtn => accBtn.classList.remove("open")) se me borra en todos, asi que no vale
-
-		accBtn.classList.toggle("open");
-		
-		const content = accBtn.nextElementSibling;
-		if(content.style.maxHeight) {
-			content.style.maxHeight = null;
-		} else {
-			content.style.maxHeight = content.scrollHeight + "px"
-		}
-	})
-})
-
-
