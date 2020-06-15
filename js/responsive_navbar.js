@@ -50,7 +50,6 @@ if(document.querySelector(".accordion-btn.open + .accordion-content")) {
 	firstAccContent.style.maxHeight = firstAccContent.scrollHeight + "px"
 }
 
-
 accordionBtns.forEach(accBtn => {
 	accBtn.addEventListener("click", function() {
 		// accordionBtns.forEach(accBtn => accBtn.classList.remove("open")) se me borra en todos, asi que no vale

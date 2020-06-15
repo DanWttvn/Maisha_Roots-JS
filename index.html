@@ -613,6 +613,7 @@
 						Por favor, para que podamos cumplir con nuestro compromiso con la transparencia, no te olvides de incluir como <strong>concepto: ‘donación’ +  nombre completo + DNI</strong>.			
 					</p>
 				</div>
+				<br>
 			</div>
 		</div>
 
@@ -1125,11 +1126,18 @@
 	</footer>
 
 
-	<!-- Mailchimp signup-->
-	<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>
-	(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='WHO';ftypes[3]='text';fnames[4]='AGE';ftypes[4]='number';}(jQuery));var $mcj = jQuery.noConflict(true);
+	<!-- Language Redirection if necessary -->
+	<script type="text/javascript">
+		document.onreadystatechange = function () {
+			let userLang = navigator.language || navigator.userLanguage;
+			if (userLang == "es") {
+				return;
+			}
+			else if(userLang == "en"){
+				window.location.href = "https://www.maisharoots.org/en"
+			}
+		}
 	</script>
-
 
 	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
@@ -1138,6 +1146,12 @@
 	<script src="./js/responsive_navbar.js"></script>
 	<script src="./js/main.js"></script>
 	<script src="./js/payments.js"></script>
+
+	<!-- Mailchimp signup-->
+	<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>
+		(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='WHO';ftypes[3]='text';fnames[4]='AGE';ftypes[4]='number';}(jQuery));var $mcj = jQuery.noConflict(true);
+	</script>
+		
 </body>
 </html>
 

@@ -1,4 +1,3 @@
-
 /* Navbar adn popups appear on Scroll */
 window.onload = function() {
 	// console.log("osdf");
