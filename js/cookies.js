@@ -3,7 +3,7 @@
 	const acceptPolicy = document.querySelector(".policy-popup button")
 
 	/* <---------- Check cookies ----------> */
-	const policyAccepted = checkCookie();
+	const policyAccepted = checkCookie("policy_accepted");
 	if(!policyAccepted) policyPopup.style.display = "block";
 
 	/* <---------- Accept cookies ----------> */
@@ -15,14 +15,21 @@
 		document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 	}
 
-	function checkCookie() {
-		var cookies = document.cookie
-							.split(";")
-							.map(cookie => cookie.split("="))
-							.reduce((acc, [key, value]) => ({
-								...acc, [key.trim()]: decodeURIComponent(value)
-							}))
-		if(cookies.policy_accepted) return true;
+	function checkCookie(cookieToCheck) {
+
+		var name = cookieToCheck + "=";
+		var decodedCookie = decodeURIComponent(document.cookie);
+		var ca = decodedCookie.split(';');
+		for(var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+			}
+		}
+		return "";
 	}
 
 	/* <---------- Close Popups ----------> */

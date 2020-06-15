@@ -2,6 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent; 
 }
 
 input,
@@ -11,10 +12,40 @@ select {
   font: inherit;
 }
 
-input:focus,
-textarea:focus {
-	outline: none;
+button, a {
+	cursor: pointer;
+	text-decoration: none;
 }
+
+input:focus,
+textarea:focus,
+button:focus,
+a:focus {
+	outline: none;
+	-webkit-tap-highlight-color: transparent; /* prevents the blue! */
+}
+input:hover,
+textarea:hover,
+button:hover,
+a:hover {
+	outline: none;
+	-webkit-tap-highlight-color: transparent; 
+}
+input:active,
+textarea:active,
+button:active,
+a:active {
+	outline: none;
+	-webkit-tap-highlight-color: transparent; 
+}
+input:visited,
+textarea:visited,
+button:visited,
+a:visited {
+	outline: none;
+	-webkit-tap-highlight-color: transparent; 
+}
+
 
 :root {
 	--darkest-red: rgb(69, 23, 22);
@@ -30,6 +61,24 @@ textarea:focus {
 	/* --timeline-event-width: 100%; */
 }
 
+#preloader {
+	position: sticky;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	right: 0;
+	background: #fff;
+
+	display: flex; justify-content: center; align-items: center;
+
+	z-index: 1000;
+}
+
+#preloader img {
+	width: fit-content;
+	height: fit-content;
+}
+
 body {
 	position: relative;
 	font-family: 'Montserrat', sans-serif;
@@ -43,6 +92,14 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+
+	overflow-x: hidden;
+}
+
+@media (max-width: 405px) {
+	body {
+		font-size: 15px;
+	}
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -369,7 +426,7 @@ button:active {
 	text-align: center;
 }
 
-/* Transition */
+/* Transition, shows sub */
 .main-menu > li.with-sub:hover > .sub-menu {
 	top: 40px;
 	opacity: 1;
@@ -435,7 +492,6 @@ button:active {
 
 
 @media (max-width: 1370px) {
-
 	.sub-menu-bg {
 		display: none;
 	}
@@ -503,14 +559,6 @@ button:active {
 		width: 100%;
 	}
 
-	/** Too much */
-	/* .main-menu > li.with-sub > .sub-menu {
-		top: 40px;
-		opacity: 1;
-		pointer-events: all;
-	} */
-
-
 	.nav-item {
 		font-size: 1em;
 	}
@@ -527,6 +575,15 @@ button:active {
 		display: block;
 	}
 }
+
+@media (max-width: 715px) {
+	/* Doesnt show sub */
+	.sub-menu,
+	.sub-menu .nav-item {
+		display: none;
+	}
+}
+
 
 
 
@@ -583,7 +640,7 @@ h2 .title-wrapper:after {
 
 .visible h2 .title-wrapper:after {
 	content: attr(data-text);
-	width: fit-content;
+	width: 100%;
 }
 
 .title-wrapper:first-of-type::after {
@@ -594,7 +651,6 @@ h2 .title-wrapper:after {
 }
 
 
-/*? 2 lineas */
 @media (max-width: 800px) {
 	h2.smaller {
 		font-size: 4rem;
@@ -619,9 +675,6 @@ h2 .title-wrapper:after {
 	h2 {
 		font-size: 2.8rem;
 	}
-	h2 .smaller {
-		font-size: 2.6rem;
-	}
 	h2.smaller {
 		font-size: 2.1rem;
 	}
@@ -631,6 +684,19 @@ h2 .title-wrapper:after {
 	}
 }
 
+
+@media (max-width: 400px) {
+	h2 {
+		font-size: 2.3rem;
+	}
+	h2.smaller {
+		font-size: 1.5rem;
+	}
+
+	h3 {
+		font-size: 1.4rem;
+	}
+}
 
 /* <----------------------------- Layouts ---------------------------> */
 
@@ -956,7 +1022,7 @@ aside.sm-links i:hover {
 }
 
 .about-section p {
-	font-size: 20px;
+	font-size: 1.2rem;
 	font-weight: 500;
 	color: white;
 }
@@ -965,6 +1031,12 @@ aside.sm-links i:hover {
 	.about-section .text-block {
 		width: 100%;
 		margin: 0 0;
+	}
+}
+
+@media (max-width: 405px) {
+	.about-section p {
+		font-size: 1rem;
 	}
 }
 
@@ -1698,6 +1770,7 @@ aside.sm-links i:hover {
 .quote-section {
 	display: flex;
 	flex-flow: column wrap;
+	overflow: hidden;
 } 
 
 
@@ -1986,9 +2059,7 @@ aside.sm-links i:hover {
 	width: 150px;
 	height: 150px;
 	border-radius: 50%;
-	padding: 10px;
 	box-shadow: 10px 10px 26px -19px rgba(0,0,0,1);
-
 
 	display: flex;
 	justify-content: center;
@@ -1999,7 +2070,7 @@ aside.sm-links i:hover {
 }
 
 .teaming-logo {
-	width: 118%;
+	width: 100%;
 }
 
 .teaming-btn:hover {

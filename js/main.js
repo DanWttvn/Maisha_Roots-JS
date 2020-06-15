@@ -1,19 +1,24 @@
 
 /* Navbar adn popups appear on Scroll */
-$(function() {
+window.onload = function() {
+	// console.log("osdf");
+	
 	$(".navbar").hide();
 	$(".newsletter-popup").hide();
 	$(".policy-popup").hide();
 	
+	// Hide loader //! la img ya se ha hecho grande. tengo que poner la animacion que empiiece despues, no se como
+	// $('#preloader').fadeOut(400);
+
     $(document).ready(function(){                    
         $(window).scroll(function(){                     
             if ($(this).scrollTop() > $(".header-section").height() - 300) {
 				$('.navbar').fadeIn(400);
 
-				const policyAccepted = checkCookie();
+				const policyAccepted = checkCookie("policy_accepted");
 				if(!policyAccepted) $(".policy-popup").fadeIn(400);
 
-				const newsletterClosed = newsletterPopup.classList.contains("closed");
+				const newsletterClosed = checkCookie("newsletter_closed")
 				if(policyAccepted && !newsletterClosed) {
 					setTimeout(function(){$(".newsletter-popup").fadeIn(400)}, 3000)
 				}
@@ -23,7 +28,7 @@ $(function() {
             }
         });
 	});
-})
+}
 
 /* <---------- Accept cookies ----------> */
 // when the cookies are accepted, a  new cookie is stored with the value of true. When the page loades, it will check it so the message doesnt show again
@@ -34,14 +39,20 @@ function setCookie(cname, cvalue, exdays) {
 	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-function checkCookie() {
-	var cookies = document.cookie
-						.split(";")
-						.map(cookie => cookie.split("="))
-						.reduce((acc, [key, value]) => ({
-							...acc, [key.trim()]: decodeURIComponent(value)
-						}))
-	if(cookies.policy_accepted) return true;
+function checkCookie(cookieToCheck) {
+	var name = cookieToCheck + "=";
+	var decodedCookie = decodeURIComponent(document.cookie);
+	var ca = decodedCookie.split(';');
+	for(var i = 0; i < ca.length; i++) {
+		var c = ca[i];
+		while (c.charAt(0) == ' ') {
+			c = c.substring(1);
+		}
+		if (c.indexOf(name) == 0) {
+			return c.substring(name.length, c.length);
+		}
+	}
+	return "";
 }
 
 
@@ -51,7 +62,7 @@ const closeNewsletter = document.querySelector(".newsletter-popup i.fa-times")
 
 closeNewsletter.addEventListener("click", () => {
 	newsletterPopup.style.display = "none"
-	newsletterPopup.classList.add("closed")
+	setCookie("newsletter_closed", "true", 1)
 })
 
 const policyPopup = document.querySelector(".policy-popup");

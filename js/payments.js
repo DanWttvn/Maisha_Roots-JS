@@ -10,13 +10,12 @@
 		// them to Checkout.
 		stripe.redirectToCheckout({
 			lineItems: [{price: 'sku_HHFyp41IihcpFQ', quantity: 1}],
-			mode: 'subscription',
+			mode: 'payment',
 			// Do not rely on the redirect to the successUrl for fulfilling
 			// purchases, customers may not always reach the success_url after
 			// a successful payment.
 			// Instead use one of the strategies described in
 			// https://stripe.com/docs/payments/checkout/fulfillment
-			//* CHANGE BEFORE DEPLOY *//
 			successUrl: window.location.protocol + '//www.maisharoots.org/donate-success',
 			cancelUrl: window.location.protocol + '//www.maisharoots.org/#collaborate'
 			// successUrl: window.location.protocol + '//www.maisharoots.org/success',
