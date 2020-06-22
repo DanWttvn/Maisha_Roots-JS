@@ -940,22 +940,9 @@ aside.sm-links i:hover {
 
 .header-img {
 	width: 70%;
-	-webkit-animation: 2s ease-out 0s 1 appear forwards;
-	        animation: 2s ease-out 0s 1 appear forwards;
-}
-
-@-webkit-keyframes appear {
-	/* from{ width: 70%; opacity: 0 }
-	to{ width: 75%; opacity: 1 } */
-	from{ transform: scale(1); opacity: 0; }
-	to{ transform: scale(1.2); opacity: 1; }
-}
-
-@keyframes appear {
-	/* from{ width: 70%; opacity: 0 }
-	to{ width: 75%; opacity: 1 } */
-	from{ transform: scale(1); opacity: 0; }
-	to{ transform: scale(1.2); opacity: 1; }
+	transform: scale(1);
+	opacity: 0;
+	transition: all 2s ease-out;
 }
 
 .header-section .scroll-icon {

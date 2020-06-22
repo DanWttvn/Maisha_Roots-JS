@@ -1,31 +1,35 @@
 /* Navbar adn popups appear on Scroll */
 window.onload = function() {
-	// console.log("osdf");
 	
 	$(".navbar").hide();
 	$(".newsletter-popup").hide();
 	$(".policy-popup").hide();
 	
-	// Hide loader //! la img ya se ha hecho grande. tengo que poner la animacion que empiiece despues, no se como
-	// $('#preloader').fadeOut(400);
+	$('#preloader').fadeOut(400);
 
-    $(document).ready(function(){                    
-        $(window).scroll(function(){                     
-            if ($(this).scrollTop() > $(".header-section").height() - 300) {
-				$('.navbar').fadeIn(400);
+	// Header logo animation
+	const header = document.querySelector(".header-img")
+	setTimeout(() => {
+		header.style.transform = "scale(1.2)";
+		header.style.opacity = "1";
+	}, 800);
 
-				const policyAccepted = checkCookie("policy_accepted");
-				if(!policyAccepted) $(".policy-popup").fadeIn(400);
 
-				const newsletterClosed = checkCookie("newsletter_closed")
-				if(policyAccepted && !newsletterClosed) {
-					setTimeout(function(){$(".newsletter-popup").fadeIn(400)}, 3000)
-				}
-            } else {
-				$('.navbar').fadeOut(400);
-				$(".newsletter-popup").fadeOut(400);
-            }
-        });
+	$(window).scroll(function(){                     
+		if ($(this).scrollTop() > $(".header-section").height() - 300) {
+			$('.navbar').fadeIn(400);
+
+			const policyAccepted = checkCookie("policy_accepted");
+			if(!policyAccepted) $(".policy-popup").fadeIn(400);
+
+			const newsletterClosed = checkCookie("newsletter_closed")
+			if(policyAccepted && !newsletterClosed) {
+				setTimeout(function(){$(".newsletter-popup").fadeIn(400)}, 3000)
+			}
+		} else {
+			$('.navbar').fadeOut(400);
+			$(".newsletter-popup").fadeOut(400);
+		}
 	});
 }
 
