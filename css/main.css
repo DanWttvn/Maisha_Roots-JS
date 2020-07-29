@@ -771,8 +771,37 @@ h2 .title-wrapper:after {
 	cursor: pointer;
 }
 
-.newsletter-footer input[type=email] {
+.newsletter-footer input[type=email],
+.newsletter-page input[type=email] {
 	width: calc(100% - 50px);
+}
+
+#join-page {
+	display: grid;
+	grid-template-rows: 1fr auto;
+	grid-template-columns: 1fr;
+}
+
+#join-page main {
+	display: flex; flex-direction: column; justify-content: center;
+}
+
+#join-page .newsletter-page {
+	margin: 90px auto 0;
+	width: 95%;
+	max-width: 600px;
+	padding: 20px 30px;
+	background: var(--darkest-red);
+	color: var(--off-orange);
+	font-weight: 300;
+	font-size: 0.95rem;
+	border-radius: 5px;
+	bottom: 30px;
+	right: 30px; 
+}
+
+#join-page .newsletter-page form {
+	width: 100%;
 }
 
 @media (max-width: 700px) {
