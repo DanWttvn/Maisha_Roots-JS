@@ -16,13 +16,10 @@
 
 	<nav class="navbar">
 		<a href="/" class="navbar-brand"><img src="./img/header-4.png" alt="Maisha Roots Logo"></a>
-
 		<div class="hamburger-icon"><i class="fas fa-bars"></i></div>
-
 		<div class="nav-items-wrapper">
 			<div class="backdrop"></div>
 			<div class="close-btn"><i class="fas fa-times"></i></div>
-
 			<ul class="main-menu">
 				<li class="with-sub"><a class="nav-item active" href="/#about">Quiénes somos</a>
 					<ul class="sub-menu">
@@ -31,23 +28,19 @@
 						<li><a class="nav-item" href="/#context">Nuestro contexto</a></li>
 					</ul>
 				</li>
-				
 				<li><a class="nav-item" href="/#timeline">De dónde venimos</a></li>
-				
 				<li class="with-sub"><a class="nav-item" href="/#structure">Cómo trabajamos</a>
 					<ul class="sub-menu">
 						<li><a class="nav-item" href="/#structure">Estructura</a></li>
 						<li><a class="nav-item" href="/#colaborators">Colaboradores/as</a></li>
 					</ul>
 				</li>
-
 				<li class="with-sub"><a class="nav-item" href="/#current-projects">Qué hacemos</a>
 					<ul class="sub-menu">
 						<li><a class="nav-item" href="/#current-projects">Anti-covid</a></li>
 						<li><a class="nav-item" href="/#evaluation">Evaluación</a></li>
 					</ul>
 				</li>
-
 				<li class="with-sub"><a class="nav-item" href="/#collaborate">Colabora</a>
 					<ul class="sub-menu">
 						<li><a class="nav-item" href="/#collaborate">Voluntariado</a></li>
@@ -55,19 +48,14 @@
 						<li><a class="nav-item" href="/#entities">Entidades</a></li>
 					</ul>
 				</li>
-
 				<li class="with-sub"><a class="nav-item" href="/#transparency">Transparencia</a>
 					<ul class="sub-menu">
-						<!-- //! falta -->
-						<!-- <li><a class="nav-item" href="/#struc">Gastos</a></li> -->
 						<li><a class="nav-item" href="/#transparency">Buen Gobierno</a></li>
 						<li><a class="nav-item" href="/#reports">Memorias</a></li>
 					</ul>
 				</li>
-
 				<div class="sub-menu-bg"></div>
 			</ul>
-		
 		</div>
 	</nav>
 
@@ -79,52 +67,74 @@
 		</p>
 	</aside>
 
-	<section id="complain-page">
+			<!-- //! CAMBAIR REQUIREDS EN EL RESTO DE FORMS -->
+
+	<section id="socios-page">
 		<h3>Hazte socia/o</h3>
 	
-		<form id="socios-form" class="form-box" >	
+		<form id="socios-form" class="form-box" onsubmit="handleSubmit(event)">	
 			<div class="form-section type-input">
-				<input type="text" name="name" id="name" required/>
+				<input type="text" name="name" id="name" placeholder=" "/>
 				<label for="name" class="label-box">
-					<span class="label-content">Nombre y Apellidos</span>
+					<span class="label-content">Nombre y Apellidos *</span>
 				</label>
 			</div>
 
 			<div class="form-section type-input">
-				<input type="text" name="dni" id="dni" required/>
+				<input type="text" name="dni" id="dni" placeholder=" "/>
 				<label for="dni" class="label-box">
-					<span class="label-content">DNI/Pasaporte</span>
+					<span class="label-content">DNI/Pasaporte *</span>
 				</label>
 			</div>
 	
 			<div class="form-section type-input">
-				<input type="email" name="email" id="email" required/>
+				<input type="email" name="email" id="email" placeholder=" "/>
 				<label for="email" class="label-box">
-					<span class="label-content">Correo Electrónico</span>
+					<span class="label-content">Correo Electrónico *</span>
 				</label>
 			</div>
 
 			<div class="form-section type-input">
-				<input type="text" name="phone" id="phone" required/>
-				<label for="phone" class="label-box">
-					<span class="label-content">Teléfono</span>
+				<input type="text" name="CP" id="CP" placeholder=" "/>
+				<label for="CP" class="label-box">
+					<span class="label-content">Código Postal *</span>
 				</label>
 			</div>
 
 			<div class="form-section type-input">
-				<input type="number" name="amount" id="amount" required/>
-				<label for="amount" class="label-box">
-					<span class="label-content">Dineros</span>
+				<input type="text" name="IBAN" id="IBAN" placeholder=" "/>
+				<label for="IBAN" class="label-box">
+					<span class="label-content">Número de cuenta *</span>
 				</label>
 			</div>
-			<!-- //! no estáfucnionado el required -->
 
-			<!-- <div class="">
-				<input type="submit" name="submit" value="Enviar"></input>
-			</div>			 -->
-			
+			<h5 style="width: 100%;">Donación mensual</h5>
+			<div class="donation-opts-wrapper">
+				<button value="5" class="donation-opt preset-opt">5€</button>
+				<button value="10" class="donation-opt preset-opt">10€</button>
+				<button value="15" class="donation-opt preset-opt">15€</button>
+				<button value="20" class="donation-opt preset-opt">20€</button>
+				<button value="25" class="donation-opt preset-opt">25€</button>
+				<button value="50" class="donation-opt preset-opt">50€</button>
+				<div value="custom" class="donation-opt" id="custom-btn">
+					Otra
+					<input step="1" onkeydown="if(event.key==='.' || event.key===','){event.preventDefault();}" id="custom-value" style="width: 50px; text-align:center" type="number">
+				</div>
+			</div>
+
+			<p id="info-msg" style="display: none;">Te vamos a cobrar cada 2 meses, chati</p>
+			<div class="g-recaptcha" data-sitekey="6LdVzd0ZAAAAAHZAZeskiUeIRnpHMU2fjlt4eJ9L" data-callback="verifyCaptcha" style="margin: 0"></div>
+			<div id="g-recaptcha-error"></div>
+			<div class="form-msg required" id="form-error" style="margin: 0"></div>
+
+			<button id="submit-btn" type="submit">
+				Enviar
+				<div class="loading"></div>
+			</button>
 		</form>
-		<button onclick="handleSubmit()">Enviar</input>
+
+		<h3 style="display: none;" class="success-msg">Gracias por tu aportación !</h3>
+
 	</section>
 
 	
@@ -137,20 +147,17 @@
 				<div class="divider"></div>
 				<a href="/#collaborate">Hazte voluntaria/o</a>
 			</div>
-
 			<div class="newsletter newsletter-footer">
 				<p>Subscribete a nuestra newsletter y no te pierdas ninguna novedad!</p>
 				<form action="https://maisharoots.us18.list-manage.com/subscribe/post?u=623c22dea8f25d5207f3771d0&amp;id=f1a4a17e61" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 					<input placeholder="introduce tu email..." type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
 					<button><i class="fas fa-chevron-down"><input type="submit" name="subscribe" value=""></i></button>
-		
 					<div id="mce-responses" class="clear">
 						<div class="response" id="mce-error-response" style="display:none"></div>
 						<div class="response" id="mce-success-response" style="display:none"></div>
 					</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 				</form>
 			</div>
-	
 			<div class="contact-links">
 				<p class="footer-title">Síguenos</p>
 				<div class="sm-links sm-links-footer">
@@ -160,7 +167,6 @@
 				</div>
 				<p><a href="mailto:info@maisharoots.org" target="_blank">info@maisharoots.org</a></p>
 			</div>
-			
 			<div class="lang-change">
 				<p class="footer-title">Languages</p>
 				<p><a href="/denuncia" class="">ESP</a> | <a href="/complain" class="">ENG</a></p>
@@ -168,15 +174,12 @@
 			</div>
 		</div>
 		<div id="policy-modal" class="modal">
-	
 			<div class="modal-backdrop"></div>
 			<div class="modal-window">
-			
 				<div class="toggle-info">
 					<button class="active">Privacidad</button>
 					<button>Cookies</button>
 				</div>
-			
 				<article id="privacy-section" class="active">
 					<h4>Política de privacidad</h4>
 					<p>
@@ -186,7 +189,6 @@
 						<br>
 						Progress Spain tratará los datos de carácter personal vinculados a sus espacios webs respetando las exigencias de la legislación vigente.
 					</p>
-			
 					<div class="accordion-wrapper">
 						<h5 class="accordion-btn"><i class="fas fa-chevron-down"></i>  ¿Quién es el responsable del tratamiento de tus datos personales?</h5>
 						<div class="accordion-content">
@@ -196,14 +198,12 @@
 								Puedes contactar con nosotros a través de nuestro correo electrónico: canaldenuncias@maisharoots.org
 							</p>	
 						</div>
-						
 						<h5 class="accordion-btn"><i class="fas fa-chevron-down"></i> ¿Con qué finalidad tratamos tus datos personales?</h5>
 						<div class="accordion-content">
 							<p>
 								En Progress Spain tratamos la información que nos facilitas con la finalidad de atender tu petición y prestar el servicio solicitado, así como para mantenerte informado por diversos canales de comunicación sobre cuestiones relativas a nuestra actividad, iniciativas de naturaleza similar a las que hayas participado con anterioridad o sobre las que nos hayas solicitado información y sobre campañas de información, sensibilización y captación de fondos.
 							</p>
 						</div>
-
 						<h5 class="accordion-btn"><i class="fas fa-chevron-down"></i> ¿Cuál es la legitimación para el tratamiento de sus datos?</h5>
 						<div class="accordion-content">
 							<p>
@@ -215,7 +215,6 @@
 								<li>El Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo de 27 de abril de 2016 relativo a la protección de las personas físicas (RGPD).</li>
 							</ul>
 						</div>
-
 						<h5 class="accordion-btn"><i class="fas fa-chevron-down"></i> ¿Cuáles son los principios aplicados al tratamiento de tu información personal?</h5>
 						<div class="accordion-content">
 							<p>
@@ -291,7 +290,6 @@
 				<article id="cookies-section">
 					<h4>Política de cookies</h4>
 					<p>Progress Spain utiliza cookies para proporcionar un uso personalizado al usuario de la Web.</p>
-			
 					<div class="accordion-wrapper">
 						<h5 class="accordion-btn"><i class="fas fa-chevron-down"></i>  ¿Qué es una cookie?</h5>
 						<div class="accordion-content">
@@ -301,7 +299,6 @@
 								El navegador del usuario utiliza la información sobre la visita a la Web para personalizar ciertas páginas o elementos. A efectos de análisis estadísticos, también puede utilizarse una cookie para transmitir a nuestro servidor un número único y anónimo generado al azar. No es posible identificar al usuario mediante una cookie. Generalmente, una cookie contiene el nombre del dominio de donde procede la misma, su "tiempo de vida" y un valor, que suele ser un valor de texto o un número único generado al azar.
 							</p>	
 						</div>
-						
 						<h5 class="accordion-btn"><i class="fas fa-chevron-down"></i>  ¿Qué tipos de cookies hay?</h5>
 						<div class="accordion-content">
 							<br>
@@ -456,34 +453,135 @@
 		</div>
 	</footer>
 
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<script src="./js/responsive_navbar.js"></script>
 	<script src="./js/cookies.js"></script>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 
 	<script>
+		
+		let amountSelected = ""
 
-		function handleSubmit (){
+		const donationBtns = document.querySelectorAll('.donation-opt')
+		const presetOpts = document.querySelectorAll('.preset-opt')
+		const donationCustomBtn = document.querySelector('#custom-btn')
+		const donationCustomInput = document.querySelector('#custom-value')
+		const infoMsg = document.querySelector('#info-msg')
+
+		const setCustomValue = e => {
+			amountSelected = "custom"
+			handleSetActive(donationCustomBtn)
+		}
+		donationCustomInput.addEventListener("click", setCustomValue)
+		donationCustomBtn.addEventListener("click", setCustomValue)
+
+		presetOpts.forEach(btn => {
+			btn.addEventListener("click", e => {
+				e.preventDefault()
+				amountSelected = e.target.value
+				if(e.target.value === "5") {
+					infoMsg.style.display = "block"
+				} else infoMsg.style.display = "none"
+				handleSetActive(e.target)
+			})
+		})
+
+		function handleSetActive(el) {
+			donationBtns.forEach(btn => {
+				btn.classList.remove("active")
+			});
+			el.classList.add("active")	
+		}
+
+		function verifyCaptcha() {
+			document.getElementById('g-recaptcha-error').innerHTML = '';
+		}
+
+
+		const handleSubmit = (e) => {
+			e.preventDefault()
+
+			//<!-- //* Required validation
+			const formMsg = document.getElementById('form-error')
+			formMsg.innerHTML = '';
+			
 			const formData = new FormData(document.querySelector('#socios-form'))
 			const formattedForm = {}
 			for (let input of formData.entries()) {
-				formattedForm[input[0]] = input[1]
+				if(!(input[0] === "custom-value" || input[0] === "g-recaptcha-response")) {
+					if(!input[1])	return formMsg.innerHTML = '<span class="form-msg">Por favor, rellena todos los campos</span>';
+					formattedForm[input[0]] = input[1]
+				}
 			}
 
-			const date = new Date()
-			const formattedDate = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}` // En month cuenta el 0
-			// Month
-			formattedForm['month'] = date.getMonth()+1 
-			// // Fecha
+			if(!amountSelected) return formMsg.innerHTML = '<span class="form-msg">Por favor, selecciona una cantidad</span>';
+
+			//<!-- //* captcha verification
+			var response = grecaptcha.getResponse();
+			if(response.length == 0) {
+				document.getElementById('g-recaptcha-error').innerHTML = '<span class="form-msg">Por favor, verifica el Captcha para continuar</span>';
+				return false;
+			}
+
+			//<!-- //* Complete object
+			const currentDate = new Date()
+			const formattedDate = `${currentDate.getDate()}/${currentDate.getMonth()+1}/${currentDate.getFullYear()}` // En month cuenta el 0
 			formattedForm['date'] = formattedDate
 
+			// Set Quantity
+			if(amountSelected === "custom") {
+				const customValue = donationCustomInput.value
+				console.log(customValue)
+				if(customValue < 5) return formMsg.innerHTML = '<span class="form-msg">La cantidad mínima mensual es de 5€</span>';
+				formattedForm['amount'] = customValue
+			} else {
+				formattedForm['amount'] = amountSelected
+			}
+
+			const { name, dni, email, CP, IBAN, amount, date } = formattedForm
+
+			document.querySelector('#submit-btn').classList.add('activeLoading')
+
+			//<!-- //* Send
 			fetch('https://api.apispreadsheets.com/data/1456/', {
 				method: 'post',
 				body: JSON.stringify({'data': formattedForm}),
-			}).then(res=>{		
+			}).then(res => {		
 				if (res.status === 201 || 200){
-					console.log('new!');
-				}
-				else {
-					console.log(res);
+
+					Email.send({
+						SecureToken: "dfe7a32e-f930-4a7b-aaf1-aed1f0d83211",
+						// To : 'maisharoots@gmail.com',
+						// To : 'dan.wttvn@gmail.com',
+						To : email,
+						From : "info@maisharoots.org",
+						Subject : "Nuevo socio!",
+						Body : `
+							Nuevo socio oleee!
+							Sus datos:
+							<br>
+							Nombre: ${name}
+							<br>
+							DNI: ${dni}
+							<br>
+							Email: ${email}
+							<br>
+							Código Postal: ${CP}
+							<br>
+							IBAN: ${IBAN}
+							<br>
+							Fecha de alta: ${date}
+							<br>
+							Dinerito al mes: ${amount}
+						`
+					}).then(message => {
+						document.querySelector('#socios-form').style.display = "none"
+						document.querySelector('.success-msg').style.display = "block"
+					}).catch(err => console.error(err))
+
+				} else {
+					formMsg.innerHTML = '<span class="form-msg">Ha ocurrido un error, por favor, vuelve a intentarlo más tarde</span>';
+					console.err(res);
 				}
 			})
 		}

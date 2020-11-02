@@ -1286,7 +1286,6 @@ aside.sm-links i:hover {
 	color: white;
 
 	-webkit-animation: 0.7s ease-in-out infinite alternate sizeAnimation;
-
 	        animation: 0.7s ease-in-out infinite alternate sizeAnimation;
 }
 @-webkit-keyframes sizeAnimation {
@@ -1888,6 +1887,14 @@ aside.sm-links i:hover {
 	padding: 45px 10% 0;
 }
 
+#socios-page h3 {
+	padding: 50px 10% 0;
+}
+
+#socios-page .form-box {
+	max-width: 600px;
+}
+
 .form-box {
 	position: relative;
 	width: 80%;
@@ -1901,7 +1908,7 @@ aside.sm-links i:hover {
 	align-items: center;
 }
 
-.form-box div {
+.form-box > div {
 	margin-bottom: 15px;
 }
 
@@ -1978,14 +1985,16 @@ aside.sm-links i:hover {
 }
 
 .form-section input:focus + .label-box .label-content, /* el + indica que el que esté debajo. cuando clickamos en el input, afecta al label así: */
-.form-section input:valid + .label-box .label-content { /* cuando se mete info, se queda ahí */
+/* .form-section input:valid + .label-box .label-content,  */
+.form-section input:not(:placeholder-shown) + .label-box .label-content { /* cuando se mete info, se queda ahí */
 	transform: translateY(-120%);
 	font-size: 0.9em;
 	color: var(--darkest-red);
 	background: none;
 }
 .form-section textarea:focus + .label-box .label-content,
-.form-section textarea:valid + .label-box .label-content {
+/* .form-section textarea:valid + .label-box .label-content, */
+.form-section textarea:not(:placeholder-shown) + .label-box .label-content {
 	transform: translateY(-300%);
 	font-size: 0.9em;
 	color: var(--darkest-red);
@@ -1993,13 +2002,17 @@ aside.sm-links i:hover {
 }
 
 .form-section input:focus + .label-box::after,
-.form-section input:valid + .label-box::after,
+/* .form-section input:valid + .label-box::after, */
 .form-section textarea:focus + .label-box::after,
-.form-section textarea:valid + .label-box::after {
+/* .form-section textarea:valid + .label-box::after, */
+.form-section input:not(:placeholder-shown) + .label-box::after,
+.form-section textarea:not(:placeholder-shown) + .label-box::after {
 	transform: translateX(0%);
 }
 
-.form-box input[type=submit] {
+.form-box input[type=submit],
+.form-box button[type=submit] {
+	position: relative;
 	border: none;
 	cursor: pointer;
 	padding: 10px 15px;
@@ -2012,6 +2025,70 @@ aside.sm-links i:hover {
 	transition: all 0.2s ease-in-out;
 }
 
+button.activeLoading .loading {
+	opacity: 1;
+	visibility: visible;
+}
+
+button .loading {
+	opacity: 0;
+	visibility: hidden;
+
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: inherit;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: inherit;
+}
+
+button .loading:after,
+button .loading:before {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+	border: 3px solid var(--off-orange);
+	width: 20px;
+	height: 20px;
+	border-left: 3px solid transparent;
+	border-bottom: 3px solid transparent;
+	animation: loading 1s ease infinite;
+	z-index: 10;
+}
+
+button .loading:before {
+	border: 3px dashed var(--off-orange);
+	animation: loading 1s linear infinite;
+	z-index: 5;
+}
+
+@keyframes loading {
+	0% { transform: rotate(0deg) }
+	100% { transform: rotate(360deg) }
+}
+
+.form-msg {
+	text-align: center;
+	color: var(--off-red);
+	font-weight: 500;
+}
+
+/* Hide arrows on number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 
 /* <---------- Current Projects Section ----------> */
@@ -2212,7 +2289,7 @@ a.link:hover {
 }
 
 
-button.donation-opt {
+.donation-opt {
 	padding: 10px 15px;
 	font-size: 1.2rem;
 	font-weight: 700;
@@ -2223,11 +2300,12 @@ button.donation-opt {
 	transition: all 0.2s ease-in-out;
 }
 
-button.donation-opt:hover {
+.donation-opt:hover {
 	background: var(--bright-red);
 }
 
-button.donation-opt:active {
+.donation-opt:active,
+.donation-opt.active {
 	background: var(--bright-red);
 }
 
