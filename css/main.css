@@ -1881,7 +1881,7 @@ aside.sm-links i:hover {
 }
 
 
-/* <---------- Complain Section ----------> */ 
+/* <---------- Form Section ----------> */ 
 
 #complain-page h3 {
 	padding: 45px 10% 0;
@@ -1912,7 +1912,8 @@ aside.sm-links i:hover {
 	margin-bottom: 15px;
 }
 
-.form-section {
+.form-section,
+.form-section-req {
 	position: relative;
 	width: 100%;
 
@@ -1920,15 +1921,18 @@ aside.sm-links i:hover {
 	/* z-index: 200; */
 }
 
-.form-section.type-input {
+.form-section.type-input,
+.form-section-req.type-input {
 	height: 60px;
 }
 
-.form-section.type-textarea {
+.form-section.type-textarea,
+.form-section-req.type-textarea {
 	height: 100px;
 }
 
-.form-section input {
+.form-section input,
+.form-section-req input {
 	width: 100%; 
 	height: 100%;
 	padding-top: 20px;
@@ -1936,7 +1940,8 @@ aside.sm-links i:hover {
 	background: transparent;
 }
 
-.form-section textarea {
+.form-section textarea,
+.form-section-req textarea {
 	width: 100%; 
 	height: 100%;
 	padding-top: 20px;
@@ -1945,11 +1950,8 @@ aside.sm-links i:hover {
 	background: transparent;
 }
 
-.form-section textarea:focus {
-	/* outline: auto; */
-}
-
-.form-section label {
+.form-section label,
+.form-section-req label {
 	position: absolute;
 	color: rgb(185, 185, 185);
 	bottom: 0;
@@ -1961,7 +1963,8 @@ aside.sm-links i:hover {
 	background: transparent;
 }
 
-.form-section label::after {
+.form-section label::after,
+.form-section-req label::after {
 	content: ""; /* puedo añadir cosas extra despues, pero solo querio styles */
 	position: absolute;
 	left: 0;
@@ -1984,8 +1987,9 @@ aside.sm-links i:hover {
 	transition: all 0.3s ease;
 }
 
-.form-section input:focus + .label-box .label-content, /* el + indica que el que esté debajo. cuando clickamos en el input, afecta al label así: */
-/* .form-section input:valid + .label-box .label-content,  */
+.form-section input:focus + .label-box .label-content,
+.form-section-req input:focus + .label-box .label-content, /* el + indica que el que esté debajo. cuando clickamos en el input, afecta al label así: */
+.form-section-req input:valid + .label-box .label-content,
 .form-section input:not(:placeholder-shown) + .label-box .label-content { /* cuando se mete info, se queda ahí */
 	transform: translateY(-120%);
 	font-size: 0.9em;
@@ -1993,7 +1997,8 @@ aside.sm-links i:hover {
 	background: none;
 }
 .form-section textarea:focus + .label-box .label-content,
-/* .form-section textarea:valid + .label-box .label-content, */
+.form-section-req textarea:focus + .label-box .label-content,
+.form-section-req textarea:valid + .label-box .label-content,
 .form-section textarea:not(:placeholder-shown) + .label-box .label-content {
 	transform: translateY(-300%);
 	font-size: 0.9em;
@@ -2002,16 +2007,19 @@ aside.sm-links i:hover {
 }
 
 .form-section input:focus + .label-box::after,
-/* .form-section input:valid + .label-box::after, */
 .form-section textarea:focus + .label-box::after,
-/* .form-section textarea:valid + .label-box::after, */
+.form-section-req input:focus + .label-box::after,
+.form-section-req textarea:focus + .label-box::after,
 .form-section input:not(:placeholder-shown) + .label-box::after,
-.form-section textarea:not(:placeholder-shown) + .label-box::after {
+.form-section textarea:not(:placeholder-shown) + .label-box::after,
+.form-section-req input:valid + .label-box::after,
+.form-section-req textarea:valid + .label-box::after {
 	transform: translateX(0%);
 }
 
 .form-box input[type=submit],
-.form-box button[type=submit] {
+.form-box button[type=submit],
+.main-btn {
 	position: relative;
 	border: none;
 	cursor: pointer;
@@ -2023,6 +2031,16 @@ aside.sm-links i:hover {
 	background: var(--dark-red);
 	color: var(--off-orange);
 	transition: all 0.2s ease-in-out;
+}
+
+.main-btn {
+	padding: 15px;
+	box-shadow: 0px 0px 8px -5px rgba(122, 23, 36,0.1);
+}
+
+.main-btn:hover {
+	transform: scale(1.05);
+	background-color: var(--bright-red);
 }
 
 button.activeLoading .loading {
